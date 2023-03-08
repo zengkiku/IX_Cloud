@@ -1,4 +1,4 @@
-# ix
+# IX ∞ Cloud
 
 [![AUR](https://img.shields.io/github/license/ix-s/ix)](https://github.com/ix-s/ix/blob/master/LICENSE)
 [![](https://img.shields.io/badge/Author-zeng_kiku-orange.svg)](https://www.ix.cn)
