@@ -1,0 +1,3 @@
+com.ix.api.system.feign.factory.RemoteLogFallbackFactory
+com.ix.api.system.feign.factory.RemoteOauth2ClientDetailsFallbackFactory
+com.ix.api.system.feign.factory.RemoteUserFallbackFactory

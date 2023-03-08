@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ix-server</artifactId>
+        <groupId>com.ix</groupId>
+        <version>3.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ix-server-job</artifactId>
+    <description>分布式定时任务</description>
+
+    <dependencies>
+
+        <!-- Quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.mchange</groupId>
+                    <artifactId>c3p0</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--job API-->
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-api-job</artifactId>
+        </dependency>
+
+        <!--默认采用多数据-->
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-framework-datasource</artifactId>
+        </dependency>
+
+        <!-- jdbc -->
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-framework-jdbc</artifactId>
+        </dependency>
+
+        <!-- 安全模块 -->
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-framework-security</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ix-api-dfs" />
+        <module name="ix-visual-sentinel" />
+        <module name="ix-gateway" />
+        <module name="ix-framework-datasource" />
+        <module name="ix-framework-utils" />
+        <module name="ix-server-dfs" />
+        <module name="ix-visual-monitor" />
+        <module name="ix-api-system" />
+        <module name="ix-server-gen" />
+        <module name="ix-api-job" />
+        <module name="ix-framework-swagger" />
+        <module name="ix-framework-jdbc" />
+        <module name="ix-framework-datascope" />
+        <module name="ix-framework-redis" />
+        <module name="ix-server-system" />
+        <module name="ix-framework-security" />
+        <module name="ix-framework-core" />
+        <module name="ix-nacos" />
+        <module name="ix-api-auth" />
+        <module name="ix-auth" />
+        <module name="ix-server-job" />
+        <module name="ix-api-gen" />
+        <module name="ix-framework-log" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

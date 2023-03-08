@@ -1,0 +1,84 @@
+{
+  "groups": [
+    {
+      "name": "swagger",
+      "type": "com.ix.framework.swagger.config.SwaggerProperties",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "swagger.base-package",
+      "type": "java.lang.String",
+      "description": "swagger会解析的包路径",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.base-path",
+      "type": "java.util.List<java.lang.String>",
+      "description": "swagger会解析的url规则",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String",
+      "description": "描述",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启swagger",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.exclude-path",
+      "type": "java.util.List<java.lang.String>",
+      "description": "在basePath基础上需要排除的url规则",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.gateway",
+      "type": "java.lang.String",
+      "description": "网关",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.ignore-providers",
+      "type": "java.util.List<java.lang.String>",
+      "description": "需要排除的服务",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.scope",
+      "type": "java.lang.String",
+      "description": "作用域",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.services",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "服务转发配置",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String",
+      "description": "标题",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.token-url",
+      "type": "java.lang.String",
+      "description": "获取token",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    },
+    {
+      "name": "swagger.version",
+      "type": "java.lang.String",
+      "description": "版本",
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>IX_Cloud</artifactId>
+        <groupId>com.ix</groupId>
+        <version>3.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ix-api</artifactId>
+    <packaging>pom</packaging>
+
+    <description>远程API适配</description>
+
+    <modules>
+        <module>ix-api-system</module>
+        <module>ix-api-job</module>
+        <module>ix-api-dfs</module>
+        <module>ix-api-gen</module>
+        <module>ix-api-auth</module>
+    </modules>
+
+    <dependencies>
+
+        <!--feign 注解依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--twelve通用核心-->
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-framework-core</artifactId>
+        </dependency>
+
+        <!--Swagger-->
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-framework-swagger</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "security.oauth2.ignore",
+      "type": "com.ix.framework.security.config.AuthIgnoreConfig",
+      "sourceType": "com.ix.framework.security.config.AuthIgnoreConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "security.oauth2.ignore.urls",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.ix.framework.security.config.AuthIgnoreConfig"
+    }
+  ],
+  "hints": []
+}
