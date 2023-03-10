@@ -11,6 +11,7 @@ import com.ix.framework.security.utils.OAuth2EndpointUtils;
 import com.ix.framework.security.utils.OAuth2ErrorCodesExpand;
 import com.ix.framework.utils.SpringContextHolder;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -38,6 +39,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -46,6 +48,7 @@ import java.util.Set;
  * @Description: 统一登录管理
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/token")
 public class IXTokenEndpoint {
 
@@ -53,17 +56,14 @@ public class IXTokenEndpoint {
 
 	private final HttpMessageConverter<OAuth2Error> errorHttpResponseConverter = new OAuth2ErrorHttpMessageConverter();
 
-	@Autowired
-	private OAuth2AuthorizationService authorizationService;
+	private final OAuth2AuthorizationService authorizationService;
 
-	@Autowired
-	private RemoteOauth2ClientDetailsService remoteOauth2ClientDetailsService;
+	private final RemoteOauth2ClientDetailsService remoteOauth2ClientDetailsService;
 
-	@Autowired
-	private RedisTemplate<String, Object> redisTemplate;
 
-	@Autowired
-	private CacheManager cacheManager;
+	private final RedisTemplate<String, Object> redisTemplate;
+
+	private final CacheManager cacheManager;
 
 	/**
 	 * 认证页面（localhost:8888/oauth/authorize?response_type=code&client_id=ix&scope=server&redirect_uri=https://www.ix.cn）
@@ -130,6 +130,7 @@ public class IXTokenEndpoint {
 				httpResponse.setStatusCode(HttpStatus.UNAUTHORIZED);
 				this.errorHttpResponseConverter.write(new OAuth2Error(OAuth2ErrorCodesExpand.TOKEN_MISSING), null,
 						httpResponse);
+				return;
 			}
 
 			Map<String, Object> claims = authorization.getAccessToken().getClaims();
@@ -151,12 +152,15 @@ public class IXTokenEndpoint {
 	@DeleteMapping("/{token}")
 	public AjaxResult removeToken(@PathVariable("token") String token) {
 		OAuth2Authorization authorization = authorizationService.findByToken(token, OAuth2TokenType.ACCESS_TOKEN);
+		if (authorization == null) {
+			return AjaxResult.success();
+		}
 		OAuth2Authorization.Token<OAuth2AccessToken> accessToken = authorization.getAccessToken();
 		if (accessToken == null || StrUtil.isBlank(accessToken.getToken().getTokenValue())) {
 			return AjaxResult.success();
 		}
 		// 清空用户信息
-		cacheManager.getCache(CacheConstants.USER_DETAILS).evict(authorization.getPrincipalName());
+		Objects.requireNonNull(cacheManager.getCache(CacheConstants.USER_DETAILS)).evict(authorization.getPrincipalName());
 		// 清空access token
 		authorizationService.remove(authorization);
 		// 处理自定义退出事件，保存相关日志
