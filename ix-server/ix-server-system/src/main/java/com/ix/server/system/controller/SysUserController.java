@@ -1,5 +1,6 @@
 package com.ix.server.system.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.ix.api.system.domain.SysMenu;
 import com.ix.api.system.domain.SysRole;
 import com.ix.api.system.domain.SysUser;
@@ -8,9 +9,11 @@ import com.ix.framework.core.application.domain.AjaxResult;
 import com.ix.framework.core.application.domain.JsonResult;
 import com.ix.framework.core.constants.UserConstants;
 import com.ix.framework.core.application.page.TableDataInfo;
+import com.ix.framework.core.exception.IXException;
 import com.ix.framework.jdbc.web.utils.PageUtils;
 import com.ix.framework.log.annotation.Log;
 import com.ix.framework.log.enums.BusinessType;
+import com.ix.framework.security.domain.LoginUser;
 import com.ix.framework.security.utils.SecurityUtils;
 import com.ix.framework.utils.TUtils;
 import com.ix.framework.utils.StringUtils;
@@ -231,7 +234,10 @@ public class SysUserController extends IXController {
 	@Log(service = "用户管理", businessType = BusinessType.UPDATE)
 	@PreAuthorize("@role.hasPermi('system:user:resetPwd')")
 	public JsonResult<String> resetPwd(@RequestBody SysUser user) {
-		iSysUserService.checkUserAllowed(user);
+		if (!SysUser.isAdmin(SecurityUtils.getLoginUser().getUserId())) {
+			throw new IXException("不允许操作超级管理员用户");
+		}
+//		iSysUserService.checkUserAllowed(user);
 		iSysUserService.checkUserDataScope(user.getUserId());
 		user.setPassword(SecurityUtils.encryptPassword(user.getPassword()));
 		user.setUpdateBy(SecurityUtils.getUsername());
