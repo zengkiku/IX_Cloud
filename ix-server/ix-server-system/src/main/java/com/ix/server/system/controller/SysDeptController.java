@@ -13,6 +13,7 @@ import com.ix.framework.utils.StringUtils;
 import com.ix.server.system.service.ISysDeptService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -30,11 +31,11 @@ import java.util.Map;
  */
 @Tag(description = "SysDeptController", name = "部门管理")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/dept")
 public class SysDeptController extends IXController {
 
-	@Autowired
-	private ISysDeptService deptService;
+	private final ISysDeptService deptService;
 
 	/**
 	 * 获取部门列表

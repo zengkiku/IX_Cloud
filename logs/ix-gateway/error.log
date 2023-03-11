@@ -895,3 +895,18 @@ com.alibaba.nacos.api.exception.NacosException: Client not connected, current st
 	at java.base/java.lang.Thread.run(Thread.java:833)
 2023-03-07 22:02:44,682 [reactor-http-nio-3] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/auth/oauth2/token,异常信息:Connection timed out: no further information: /169.254.250.17:8888
 2023-03-07 23:06:04,507 [boundedElastic-13] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/system/user/getInfo,异常信息:404 NOT_FOUND "Unable to find instance for ix-server-system"
+2023-03-10 22:18:09,064 [main] ERROR [o.s.b.diagnostics.LoggingFailureAnalysisReporter] LoggingFailureAnalysisReporter.java:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.ix.gateway.handler.SwaggerHandler required a bean of type 'springfox.documentation.swagger.web.SecurityConfiguration' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'springfox.documentation.swagger.web.SecurityConfiguration' in your configuration.
+

@@ -3,6 +3,7 @@ package com.ix.server.system.service.impl;
 import com.ix.api.system.domain.SysOperationLog;
 import com.ix.server.system.mapper.SysOperationLogMapper;
 import com.ix.server.system.service.ISysOperationLogService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,11 @@ import java.util.List;
  * @Description: 操作日志 服务层处理
  */
 @Service
+@RequiredArgsConstructor
 public class SysOperationLogServiceImpl implements ISysOperationLogService {
 
-	@Autowired
-	private SysOperationLogMapper sysOperationLogMapper;
+
+	private final SysOperationLogMapper sysOperationLogMapper;
 
 	/**
 	 * 新增操作日志

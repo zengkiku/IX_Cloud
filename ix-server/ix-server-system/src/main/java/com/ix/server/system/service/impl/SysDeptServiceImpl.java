@@ -12,6 +12,7 @@ import com.ix.framework.utils.SpringContextHolder;
 import com.ix.framework.utils.StringUtils;
 import com.ix.server.system.mapper.SysDeptMapper;
 import com.ix.server.system.service.ISysDeptService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,10 +26,10 @@ import java.util.stream.Collectors;
  * @Description: 部门管理 服务实现
  */
 @Service
+@RequiredArgsConstructor
 public class SysDeptServiceImpl implements ISysDeptService {
 
-	@Autowired
-	private SysDeptMapper deptMapper;
+	private final SysDeptMapper deptMapper;
 
 	/**
 	 * 查询部门管理数据

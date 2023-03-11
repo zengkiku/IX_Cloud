@@ -18,6 +18,7 @@ import com.ix.framework.utils.poi.ExcelUtils;
 import com.ix.server.system.service.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -38,20 +39,21 @@ import java.util.stream.Collectors;
  */
 @Tag(description = "SysUserController", name = "用户信息")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/user")
 public class SysUserController extends IXController {
 
-	@Autowired
-	private ISysUserService iSysUserService;
 
-	@Autowired
-	private ISysRoleService iSysRoleService;
+	private final ISysUserService iSysUserService;
 
-	@Autowired
-	private ISysPostService iSysPostService;
 
-	@Autowired
-	private ISysPermissionService iSysPermissionService;
+	private final ISysRoleService iSysRoleService;
+
+
+	private final ISysPostService iSysPostService;
+
+
+	private final ISysPermissionService iSysPermissionService;
 
 	/**
 	 * 获取用户列表

@@ -7,6 +7,7 @@ import com.ix.framework.utils.TUtils;
 import com.ix.server.system.mapper.SysPostMapper;
 import com.ix.server.system.mapper.SysUserPostMapper;
 import com.ix.server.system.service.ISysPostService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +19,14 @@ import java.util.List;
  * @Description: 操作日志 服务层处理
  */
 @Service
+@RequiredArgsConstructor
 public class SysPostServiceImpl implements ISysPostService {
 
-	@Autowired
-	private SysPostMapper postMapper;
 
-	@Autowired
-	private SysUserPostMapper userPostMapper;
+	private final SysPostMapper postMapper;
+
+
+	private final SysUserPostMapper userPostMapper;
 
 	/**
 	 * 新增保存岗位信息

@@ -13,6 +13,7 @@ import com.ix.framework.utils.poi.ExcelUtils;
 import com.ix.server.system.service.ISysDictTypeService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -28,11 +29,12 @@ import java.util.List;
  */
 @Tag(description = "SysDictTypeController", name = "数据字典信息")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/dictionaries/type")
 public class SysDictTypeController extends IXController {
 
-	@Autowired
-	private ISysDictTypeService dictTypeService;
+
+	private final ISysDictTypeService dictTypeService;
 
 	/**
 	 * 数据字典信息分页查询

@@ -13,6 +13,7 @@ import com.ix.framework.utils.poi.ExcelUtils;
 import com.ix.server.system.service.ISysPostService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -28,11 +29,12 @@ import java.util.List;
  */
 @Tag(description = "SysPostController", name = "岗位信息操作处理")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/post")
 public class SysPostController extends IXController {
 
-	@Autowired
-	private ISysPostService iSysPostService;
+
+	private final ISysPostService iSysPostService;
 
 	/**
 	 * 新增岗位

@@ -10,6 +10,7 @@ import com.ix.server.system.mapper.SysDictDataMapper;
 import com.ix.server.system.mapper.SysDictTypeMapper;
 import com.ix.server.system.service.ISysDictTypeService;
 import com.ix.server.system.utils.DictUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -23,13 +24,14 @@ import java.util.List;
  * @Description: 字典 业务层
  */
 @Service
+@RequiredArgsConstructor
 public class SysDictTypeServiceImpl implements ISysDictTypeService {
 
-	@Autowired
-	private SysDictTypeMapper dictTypeMapper;
 
-	@Autowired
-	private SysDictDataMapper dictDataMapper;
+	private final SysDictTypeMapper dictTypeMapper;
+
+
+	private final SysDictDataMapper dictDataMapper;
 
 	/**
 	 * 根据条件分页查询字典类型

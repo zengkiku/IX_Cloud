@@ -5,6 +5,7 @@ import com.ix.api.system.domain.dto.SysClientDetailsDTO;
 import com.ix.framework.redis.service.constants.CacheConstants;
 import com.ix.server.system.mapper.SysClientDetailsMapper;
 import com.ix.server.system.service.ISysClientDetailsService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
@@ -17,10 +18,10 @@ import java.util.List;
  * @Description: 终端配置Service接口
  */
 @Service
+@RequiredArgsConstructor
 public class SysClientDetailsServiceImpl implements ISysClientDetailsService {
 
-	@Autowired
-	private SysClientDetailsMapper sysClientDetailsMapper;
+	private final SysClientDetailsMapper sysClientDetailsMapper;
 
 	/**
 	 * 查询终端配置

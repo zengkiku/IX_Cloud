@@ -12,6 +12,7 @@ import com.ix.framework.core.domain.R;
 import com.ix.framework.utils.TUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -23,11 +24,12 @@ import org.springframework.web.bind.annotation.*;
  */
 @Tag(description = "TokenController", name = "令牌管理")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/token")
 public class TokenController extends IXController {
 
-	@Autowired
-	private RemoteTokenService remoteTokenService;
+
+	private final RemoteTokenService remoteTokenService;
 
 	/**
 	 * 分页token 信息

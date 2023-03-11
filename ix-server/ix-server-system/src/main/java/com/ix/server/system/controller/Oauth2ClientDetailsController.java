@@ -14,6 +14,7 @@ import com.ix.framework.utils.StringUtils;
 import com.ix.server.system.service.ISysClientDetailsService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -27,11 +28,11 @@ import java.util.List;
  */
 @Tag(description = "Oauth2ClientDetailsController", name = "终端配置")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/client")
 public class Oauth2ClientDetailsController extends IXController {
 
-	@Autowired
-	private ISysClientDetailsService sysClientDetailsService;
+	private final ISysClientDetailsService sysClientDetailsService;
 
 	/**
 	 * 查询终端配置列表

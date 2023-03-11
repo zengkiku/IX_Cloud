@@ -52,3 +52,7 @@
 2023-03-10 22:09:43,775 [main] INFO  [com.ix.auth.AuthApplication] StartupInfoLogger.java:57 - Started AuthApplication in 19.16 seconds (process running for 20.345)
 2023-03-10 22:09:43,798 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-auth-dev.yml, group=DEFAULT_GROUP
 2023-03-10 22:09:43,805 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-app-dev.yml, group=DEFAULT_GROUP
+2023-03-10 22:17:46,500 [SpringApplicationShutdownHook] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-03-10 22:17:46,501 [SpringApplicationShutdownHook] INFO  [io.undertow] Undertow.java:259 - stopping server: Undertow - 2.3.4.Final
+2023-03-10 22:17:46,517 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:95 - De-registering from Nacos Server now...
+2023-03-10 22:17:46,547 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:115 - De-registration finished.

@@ -7,6 +7,7 @@ import com.ix.framework.utils.http.IpUtils;
 import com.ix.server.system.service.ISysLoginInfoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,11 +18,11 @@ import org.springframework.web.bind.annotation.*;
  */
 @Tag(description = "SysLoginInfoApi", name = "系统操作日志API")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/loginInfo")
 public class SysLoginInfoApi extends IXController {
 
-	@Autowired
-	private ISysLoginInfoService iSysLoginInfoService;
+	private final ISysLoginInfoService iSysLoginInfoService;
 
 	/**
 	 * 记录登录信息

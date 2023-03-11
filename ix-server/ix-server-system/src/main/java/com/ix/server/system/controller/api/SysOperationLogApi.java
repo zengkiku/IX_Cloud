@@ -6,6 +6,7 @@ import com.ix.framework.core.application.controller.IXController;
 import com.ix.server.system.service.ISysOperationLogService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,11 +17,11 @@ import org.springframework.web.bind.annotation.*;
  */
 @Tag(description = "SysOperationLogApi", name = "操作日志记录API")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/operationLog")
 public class SysOperationLogApi extends IXController {
 
-	@Autowired
-	private ISysOperationLogService iSysOperationLogService;
+	private final ISysOperationLogService iSysOperationLogService;
 
 	/**
 	 * 新增操作日志

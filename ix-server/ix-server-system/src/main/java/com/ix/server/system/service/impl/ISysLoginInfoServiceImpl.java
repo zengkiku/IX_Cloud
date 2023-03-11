@@ -6,6 +6,7 @@ import com.ix.framework.utils.TUtils;
 import com.ix.server.system.mapper.SysLoginInfoMapper;
 import com.ix.server.system.mapper.SysUserMapper;
 import com.ix.server.system.service.ISysLoginInfoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,13 +18,14 @@ import java.util.List;
  * @Description: 系统操作/访问日志
  */
 @Service
+@RequiredArgsConstructor
 public class ISysLoginInfoServiceImpl implements ISysLoginInfoService {
 
-	@Autowired
-	private SysLoginInfoMapper sysLoginInfoMapper;
 
-	@Autowired
-	private SysUserMapper sysUserMapper;
+	private final SysLoginInfoMapper sysLoginInfoMapper;
+
+
+	private final SysUserMapper sysUserMapper;
 
 	/**
 	 * 查询系统登录日志集合

@@ -17,6 +17,7 @@ import com.ix.server.system.mapper.SysRoleMapper;
 import com.ix.server.system.mapper.SysRoleMenuMapper;
 import com.ix.server.system.mapper.SysUserRoleMapper;
 import com.ix.server.system.service.ISysRoleService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
@@ -30,22 +31,18 @@ import java.util.*;
  * @Description: 角色权限服务
  */
 @Service
+@RequiredArgsConstructor
 public class SysRoleServiceImpl implements ISysRoleService {
 
-	@Autowired
-	private SysRoleMapper sysRoleMapper;
+	private final SysRoleMapper sysRoleMapper;
 
-	@Autowired
-	private SysRoleMenuMapper sysRoleMenuMapper;
+	private final SysRoleMenuMapper sysRoleMenuMapper;
 
-	@Autowired
-	private SysUserRoleMapper sysUserRoleMapper;
+	private final SysUserRoleMapper sysUserRoleMapper;
 
-	@Autowired
-	private SysRoleDeptMapper sysRoleDeptMapper;
+	private final SysRoleDeptMapper sysRoleDeptMapper;
 
-	@Autowired
-	private CacheManager cacheManager;
+	private final CacheManager cacheManager;
 
 	/**
 	 * 根据条件分页查询角色数据

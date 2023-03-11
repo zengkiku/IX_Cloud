@@ -11,6 +11,7 @@ import com.ix.framework.utils.poi.ExcelUtils;
 import com.ix.server.system.service.ISysOperationLogService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -25,11 +26,12 @@ import java.util.List;
  */
 @Tag(description = "SysOperationLogController", name = "操作日志记录")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/operationLog")
 public class SysOperationLogController extends IXController {
 
-	@Autowired
-	private ISysOperationLogService iSysOperationLogService;
+
+	private final ISysOperationLogService iSysOperationLogService;
 
 	/**
 	 * 移除指定ID日志

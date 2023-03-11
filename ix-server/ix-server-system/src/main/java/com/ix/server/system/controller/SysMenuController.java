@@ -15,6 +15,7 @@ import com.ix.framework.security.utils.SecurityUtils;
 import com.ix.server.system.service.ISysMenuService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -31,11 +32,11 @@ import java.util.Map;
  */
 @Tag(description = "SysMenuController", name = "系统菜单控制器")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/menu")
 public class SysMenuController extends IXController {
 
-	@Autowired
-	private ISysMenuService iSysMenuService;
+	private final ISysMenuService iSysMenuService;
 
 	/**
 	 * 新增菜单

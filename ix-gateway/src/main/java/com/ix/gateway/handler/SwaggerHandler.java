@@ -1,5 +1,7 @@
 package com.ix.gateway.handler;
 
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,21 +19,28 @@ import java.util.Optional;
  * @Description: 处理Swagger响应
  */
 @RestController
+@Setter // setter注入替换@Autowired(required = false)
 @RequestMapping("/swagger-resources")
 public class SwaggerHandler {
 
-	@Autowired(required = false)
 	private SecurityConfiguration securityConfiguration;
 
-	@Autowired(required = false)
 	private UiConfiguration uiConfiguration;
 
 	private final SwaggerResourcesProvider swaggerResources;
 
-	@Autowired
+//	@Autowired
 	public SwaggerHandler(SwaggerResourcesProvider swaggerResources) {
 		this.swaggerResources = swaggerResources;
 	}
+
+//	public void setSecurityConfiguration(SecurityConfiguration securityConfiguration) {
+//		this.securityConfiguration = securityConfiguration;
+//	}
+//
+//	public void setUiConfiguration(UiConfiguration uiConfiguration) {
+//		this.uiConfiguration = uiConfiguration;
+//	}
 
 	@GetMapping("/configuration/security")
 	public Mono<ResponseEntity<SecurityConfiguration>> securityConfiguration() {
