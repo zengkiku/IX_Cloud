@@ -16,13 +16,13 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "oss.minio")
 public class MinIoClientConfig {
-    @Value("${minio.endpoint}")
+//    @Value("${minio.endpoint}")
     private String endpoint;
-    @Value("${minio.accessKey}")
+//    @Value("${minio.accessKey}")
     private String accessKey;
-    @Value("${minio.secretKey}")
+//    @Value("${minio.secretKey}")
     private String secretKey;
-    @Value("${minio.bucketName}")
+//    @Value("${minio.bucketName}")
     private String bucketName;
 
     /**

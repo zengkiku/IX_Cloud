@@ -25,18 +25,14 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Zeng IX
- * @email zeng_kiku@qq.com
- * @Description: FastDFS文件存储
- */
-@Primary
-@Service
+
 /**
  * @author Zeng IX
  * @email zeng_kiku@qq.com
  * @Description: 文件上传实现类
  */
+@Primary
+@Service
 public class DFSServiceImpl implements IDFSService {
 
 	private static final Logger logger = LoggerFactory.getLogger(DFSServiceImpl.class);

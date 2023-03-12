@@ -27,6 +27,7 @@ import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.rule.GatewayParamFlo
 import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.rule.UpdateFlowRuleReqVo;
 import com.alibaba.csp.sentinel.dashboard.repository.gateway.InMemGatewayFlowRuleStore;
 import com.alibaba.csp.sentinel.util.StringUtil;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,16 +48,15 @@ import static com.alibaba.csp.sentinel.slots.block.RuleConstant.*;
  * @since 1.7.0
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "/gateway/flow")
 public class GatewayFlowRuleController {
 
 	private final Logger logger = LoggerFactory.getLogger(GatewayFlowRuleController.class);
 
-	@Autowired
-	private InMemGatewayFlowRuleStore repository;
+	private final InMemGatewayFlowRuleStore repository;
 
-	@Autowired
-	private SentinelApiClient sentinelApiClient;
+	private final SentinelApiClient sentinelApiClient;
 
 	@GetMapping("/list.json")
 	@AuthAction(AuthService.PrivilegeType.READ_RULE)
