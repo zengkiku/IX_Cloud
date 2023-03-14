@@ -1,6 +1,7 @@
 package com.ix.server.dfs.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @email zeng_kiku@qq.com
  * @Description: 七牛云配置
  */
-@Component
+@Configuration
 @ConfigurationProperties(prefix = "oss.qiniu")
 public class QiNiuConfig {
 

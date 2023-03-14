@@ -13,9 +13,9 @@ import com.ix.server.dfs.config.QiNiuConfig;
 import com.ix.server.dfs.mapper.DFSMapper;
 import com.ix.server.dfs.service.IDFSService;
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,26 +25,22 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Zeng IX
- * @email zeng_kiku@qq.com
- * @Description: FastDFS文件存储
- */
-@Primary
-@Service
+
 /**
  * @author Zeng IX
  * @email zeng_kiku@qq.com
  * @Description: 文件上传实现类
  */
-public class DFSServiceImpl implements IDFSService {
+@Primary
+@Service
+public class DFSServiceQiNiuImpl implements IDFSService {
 
-	private static final Logger logger = LoggerFactory.getLogger(DFSServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(DFSServiceQiNiuImpl.class);
 
-	@Autowired
+	@Resource
 	private QiNiuConfig qiNiuConfig;
 
-	@Autowired
+	@Resource
 	private DFSMapper dfsMapper;
 
 	private UploadManager uploadManager;

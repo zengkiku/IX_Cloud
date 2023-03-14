@@ -5,6 +5,7 @@ import java.util.List;
 import com.ix.api.job.domain.SysJobLog;
 import com.ix.server.job.mapper.SysJobLogMapper;
 import com.ix.server.job.service.ISysJobLogService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,10 @@ import org.springframework.stereotype.Service;
  * @Description: 定时任务调度日志信息 服务层
  */
 @Service
+@RequiredArgsConstructor
 public class SysJobLogServiceImpl implements ISysJobLogService {
 
-	@Autowired
-	private SysJobLogMapper jobLogMapper;
+	private final SysJobLogMapper jobLogMapper;
 
 	/**
 	 * 获取quartz调度器日志的计划任务

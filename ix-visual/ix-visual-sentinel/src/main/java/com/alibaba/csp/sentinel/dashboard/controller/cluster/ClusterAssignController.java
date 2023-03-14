@@ -21,6 +21,7 @@ import com.alibaba.csp.sentinel.dashboard.domain.cluster.ClusterAppFullAssignReq
 import com.alibaba.csp.sentinel.dashboard.domain.cluster.ClusterAppSingleServerAssignRequest;
 import com.alibaba.csp.sentinel.dashboard.service.ClusterAssignService;
 import com.alibaba.csp.sentinel.util.StringUtil;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +35,13 @@ import java.util.Set;
  * @since 1.4.1
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/cluster/assign")
 public class ClusterAssignController {
 
 	private final Logger logger = LoggerFactory.getLogger(ClusterAssignController.class);
 
-	@Autowired
-	private ClusterAssignService clusterAssignService;
+	private final ClusterAssignService clusterAssignService;
 
 	@PostMapping("/all_server/{app}")
 	public Result<ClusterAppAssignResultVO> apiAssignAllClusterServersOfApp(@PathVariable String app,

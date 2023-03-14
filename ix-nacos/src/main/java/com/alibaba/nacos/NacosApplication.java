@@ -33,6 +33,7 @@ public class NacosApplication {
 		System.setProperty(ConfigConstants.AUTH_ENABLED, "false");
 		System.setProperty(ConfigConstants.LOG_BASEDIR, "logs");
 		System.setProperty(ConfigConstants.LOG_ENABLED, "false");
+		System.setProperty("server.port","8888");
 		return true;
 	}
 

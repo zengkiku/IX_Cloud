@@ -118,3 +118,638 @@
 2023-03-11 18:09:22,850 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-app-dev.yml, group=DEFAULT_GROUP
 2023-03-11 18:09:36,266 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:95 - De-registering from Nacos Server now...
 2023-03-11 18:09:36,295 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:115 - De-registration finished.
+2023-03-14 12:02:11,154 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 8.0.0.Final
+2023-03-14 12:02:11,241 [main] INFO  [com.ix.gateway.GatewayApplication] StartupInfoLogger.java:51 - Starting GatewayApplication using Java 17.0.2 with PID 11212 (E:\JAVA\my_projects\IX_Cloud\ix-gateway\target\classes started by 1617595881@qq.com in E:\JAVA\my_projects\IX_Cloud)
+2023-03-14 12:02:11,243 [main] INFO  [com.ix.gateway.GatewayApplication] SpringApplication.java:638 - The following 1 profile is active: "dev"
+2023-03-14 12:02:11,317 [main] INFO  [c.a.cloud.nacos.configdata.NacosConfigDataLoader] DeferredLog.java:250 - [Nacos Config] Load config[dataId=ix-gateway-dev.yml, group=DEFAULT_GROUP] success
+2023-03-14 12:02:11,318 [main] INFO  [c.a.cloud.nacos.configdata.NacosConfigDataLoader] DeferredLog.java:250 - [Nacos Config] Load config[dataId=ix-app-dev.yml, group=DEFAULT_GROUP] success
+2023-03-14 12:02:12,988 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:282 - BeanFactory id=31ac4d16-8f76-3c9e-b7be-18fdfc921734
+2023-03-14 12:02:13,219 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 12:02:13,221 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 12:02:13,224 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 12:02:13,846 [main] INFO  [o.s.c.g.config.LocalResponseCacheAutoConfiguration] LocalResponseCacheAutoConfiguration.java:86 - Initializing Caffeine
+2023-03-14 12:02:15,084 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 12:02:16,288 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 12:02:16,381 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [After]
+2023-03-14 12:02:16,381 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Before]
+2023-03-14 12:02:16,381 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Between]
+2023-03-14 12:02:16,381 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Cookie]
+2023-03-14 12:02:16,382 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Header]
+2023-03-14 12:02:16,382 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Host]
+2023-03-14 12:02:16,382 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Method]
+2023-03-14 12:02:16,383 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Path]
+2023-03-14 12:02:16,383 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Query]
+2023-03-14 12:02:16,383 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [ReadBody]
+2023-03-14 12:02:16,383 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [RemoteAddr]
+2023-03-14 12:02:16,384 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2023-03-14 12:02:16,384 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Weight]
+2023-03-14 12:02:16,384 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-03-14 12:02:17,584 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 12:02:17,745 [main] INFO  [c.a.c.s.gateway.scg.SentinelSCGAutoConfiguration] SentinelSCGAutoConfiguration.java:143 - [Sentinel SpringCloudGateway] register SentinelGatewayFilter with order: -2147483648
+2023-03-14 12:02:18,125 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:58 - Exposing 19 endpoint(s) beneath base path '/actuator'
+2023-03-14 12:02:18,244 [main] INFO  [c.a.c.s.gateway.scg.SentinelSCGAutoConfiguration] SentinelSCGAutoConfiguration.java:133 - [Sentinel SpringCloudGateway] register SentinelGatewayBlockExceptionHandler
+2023-03-14 12:02:19,081 [main] INFO  [o.s.boot.web.embedded.netty.NettyWebServer] NettyWebServer.java:111 - Netty started on port 8080
+2023-03-14 12:02:20,249 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 12:02:21,441 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 12:02:21,716 [main] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:76 - nacos registry, DEFAULT_GROUP ix-gateway 169.254.250.17:8080 register finished
+2023-03-14 12:02:21,954 [main] INFO  [c.a.c.n.discovery.GatewayLocatorHeartBeatPublisher] GatewayLocatorHeartBeatPublisher.java:64 - Start nacos gateway locator heartBeat task scheduler.
+2023-03-14 12:02:21,993 [main] INFO  [com.ix.gateway.GatewayApplication] StartupInfoLogger.java:57 - Started GatewayApplication in 14.723 seconds (process running for 15.482)
+2023-03-14 12:02:22,013 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-gateway-dev.yml, group=DEFAULT_GROUP
+2023-03-14 12:02:22,014 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-app-dev.yml, group=DEFAULT_GROUP
+2023-03-14 12:26:40,765 [boundedElastic-25] WARN  [o.s.cloud.loadbalancer.core.RoundRobinLoadBalancer] RoundRobinLoadBalancer.java:98 - No servers available for service: ix-server-job
+2023-03-14 12:26:40,780 [boundedElastic-25] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/job/cron/pageQuery,异常信息:404 NOT_FOUND "Unable to find instance for ix-server-job"
+2023-03-14 12:37:41,398 [boundedElastic-34] WARN  [o.s.cloud.loadbalancer.core.RoundRobinLoadBalancer] RoundRobinLoadBalancer.java:98 - No servers available for service: ix-server-job
+2023-03-14 12:37:41,399 [boundedElastic-34] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/job/log/pageQuery,异常信息:404 NOT_FOUND "Unable to find instance for ix-server-job"
+2023-03-14 12:38:48,753 [boundedElastic-33] WARN  [o.s.cloud.loadbalancer.core.RoundRobinLoadBalancer] RoundRobinLoadBalancer.java:98 - No servers available for service: ix-server-job
+2023-03-14 12:38:48,754 [boundedElastic-33] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/job/cron/pageQuery,异常信息:404 NOT_FOUND "Unable to find instance for ix-server-job"
+2023-03-14 12:38:53,725 [boundedElastic-36] WARN  [o.s.cloud.loadbalancer.core.RoundRobinLoadBalancer] RoundRobinLoadBalancer.java:98 - No servers available for service: ix-server-job
+2023-03-14 12:38:53,725 [boundedElastic-36] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/job/cron/pageQuery,异常信息:404 NOT_FOUND "Unable to find instance for ix-server-job"
+2023-03-14 13:16:56,411 [boundedElastic-53] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 10 milliseconds, 983200 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@3b986af4[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 10 milliseconds, 983200 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@3b986af4[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 18 common frames omitted
+2023-03-14 13:16:56,423 [boundedElastic-61] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 11 milliseconds, 381800 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@2c4fa58a[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 11 milliseconds, 381800 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@2c4fa58a[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 18 common frames omitted
+2023-03-14 13:16:56,411 [boundedElastic-56] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 11 milliseconds, 29000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@6ea70281[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 11 milliseconds, 29000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@6ea70281[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 18 common frames omitted
+2023-03-14 13:17:07,458 [boundedElastic-61] ERROR [c.a.cloud.nacos.discovery.NacosDiscoveryClient] NacosDiscoveryClient.java:86 - get service name from nacos server failed.
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.NacosDiscoveryClient.getServices(NacosDiscoveryClient.java:80)
+	at org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient.getServices(CompositeDiscoveryClient.java:67)
+	at org.springframework.cloud.client.discovery.health.DiscoveryClientHealthIndicator.health(DiscoveryClientHealthIndicator.java:73)
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72)
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:227)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:23,726 [boundedElastic-61] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:23,726 [boundedElastic-53] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:23,726 [boundedElastic-56] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:28,827 [boundedElastic-38] ERROR [c.a.cloud.nacos.discovery.NacosDiscoveryClient] NacosDiscoveryClient.java:86 - get service name from nacos server failed.
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.NacosDiscoveryClient.getServices(NacosDiscoveryClient.java:80)
+	at org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient.getServices(CompositeDiscoveryClient.java:67)
+	at org.springframework.cloud.client.discovery.health.DiscoveryClientHealthIndicator.health(DiscoveryClientHealthIndicator.java:73)
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72)
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:227)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:51,888 [boundedElastic-53] ERROR [c.a.cloud.nacos.discovery.NacosDiscoveryClient] NacosDiscoveryClient.java:86 - get service name from nacos server failed.
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.NacosDiscoveryClient.getServices(NacosDiscoveryClient.java:80)
+	at org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient.getServices(CompositeDiscoveryClient.java:67)
+	at org.springframework.cloud.client.discovery.health.DiscoveryClientHealthIndicator.health(DiscoveryClientHealthIndicator.java:73)
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72)
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:227)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:53,741 [boundedElastic-38] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:53,741 [boundedElastic-26] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:17:53,741 [boundedElastic-53] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:53:57,074 [boundedElastic-75] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 8 milliseconds, 246800 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@1d17ad7f[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 8 milliseconds, 246800 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@1d17ad7f[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 18 common frames omitted
+2023-03-14 13:53:57,074 [boundedElastic-79] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 8 milliseconds, 277000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@5432b402[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 8 milliseconds, 277000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@5432b402[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 18 common frames omitted
+2023-03-14 13:53:57,074 [boundedElastic-38] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 8 milliseconds, 556100 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@4281fee5[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 8 milliseconds, 556100 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@4281fee5[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d8a1e9c, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@33638709, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@8a15601}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 18 common frames omitted
+2023-03-14 13:54:03,001 [boundedElastic-71] ERROR [c.a.cloud.nacos.discovery.NacosDiscoveryClient] NacosDiscoveryClient.java:86 - get service name from nacos server failed.
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.NacosDiscoveryClient.getServices(NacosDiscoveryClient.java:80)
+	at org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient.getServices(CompositeDiscoveryClient.java:67)
+	at org.springframework.cloud.client.discovery.health.DiscoveryClientHealthIndicator.health(DiscoveryClientHealthIndicator.java:73)
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72)
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:227)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:54:24,395 [boundedElastic-79] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:54:24,395 [boundedElastic-71] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:54:24,395 [boundedElastic-75] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:54:31,089 [boundedElastic-82] ERROR [c.a.cloud.nacos.discovery.NacosDiscoveryClient] NacosDiscoveryClient.java:86 - get service name from nacos server failed.
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.NacosDiscoveryClient.getServices(NacosDiscoveryClient.java:80)
+	at org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient.getServices(CompositeDiscoveryClient.java:67)
+	at org.springframework.cloud.client.discovery.health.DiscoveryClientHealthIndicator.health(DiscoveryClientHealthIndicator.java:73)
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72)
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:227)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:54:54,406 [boundedElastic-75] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:54:54,406 [boundedElastic-82] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 13:54:54,406 [boundedElastic-71] ERROR [c.a.c.n.d.reactive.NacosReactiveDiscoveryClient] NacosReactiveDiscoveryClient.java:94 - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-03-14 15:35:02,601 [reactor-http-nio-6] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+2023-03-14 16:55:14,726 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:95 - De-registering from Nacos Server now...
+2023-03-14 16:55:14,755 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:115 - De-registration finished.
+2023-03-14 17:26:18,856 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 8.0.0.Final
+2023-03-14 17:26:18,952 [main] INFO  [com.ix.gateway.GatewayApplication] StartupInfoLogger.java:51 - Starting GatewayApplication using Java 17.0.2 with PID 8592 (E:\JAVA\my_projects\IX_Cloud\ix-gateway\target\classes started by 1617595881@qq.com in E:\JAVA\my_projects\IX_Cloud)
+2023-03-14 17:26:18,953 [main] INFO  [com.ix.gateway.GatewayApplication] SpringApplication.java:638 - The following 1 profile is active: "dev"
+2023-03-14 17:26:19,016 [main] INFO  [c.a.cloud.nacos.configdata.NacosConfigDataLoader] DeferredLog.java:250 - [Nacos Config] Load config[dataId=ix-gateway-dev.yml, group=DEFAULT_GROUP] success
+2023-03-14 17:26:19,017 [main] INFO  [c.a.cloud.nacos.configdata.NacosConfigDataLoader] DeferredLog.java:250 - [Nacos Config] Load config[dataId=ix-app-dev.yml, group=DEFAULT_GROUP] success
+2023-03-14 17:26:20,983 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:282 - BeanFactory id=31ac4d16-8f76-3c9e-b7be-18fdfc921734
+2023-03-14 17:26:21,311 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 17:26:21,313 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 17:26:21,315 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 17:26:22,096 [main] INFO  [o.s.c.g.config.LocalResponseCacheAutoConfiguration] LocalResponseCacheAutoConfiguration.java:86 - Initializing Caffeine
+2023-03-14 17:26:23,468 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:26:24,729 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:26:24,838 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [After]
+2023-03-14 17:26:24,839 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Before]
+2023-03-14 17:26:24,839 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Between]
+2023-03-14 17:26:24,840 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Cookie]
+2023-03-14 17:26:24,840 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Header]
+2023-03-14 17:26:24,840 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Host]
+2023-03-14 17:26:24,840 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Method]
+2023-03-14 17:26:24,840 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Path]
+2023-03-14 17:26:24,841 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Query]
+2023-03-14 17:26:24,841 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [ReadBody]
+2023-03-14 17:26:24,841 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [RemoteAddr]
+2023-03-14 17:26:24,841 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2023-03-14 17:26:24,841 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Weight]
+2023-03-14 17:26:24,842 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-03-14 17:26:26,129 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:26:26,349 [main] INFO  [c.a.c.s.gateway.scg.SentinelSCGAutoConfiguration] SentinelSCGAutoConfiguration.java:143 - [Sentinel SpringCloudGateway] register SentinelGatewayFilter with order: -2147483648
+2023-03-14 17:26:26,872 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:58 - Exposing 19 endpoint(s) beneath base path '/actuator'
+2023-03-14 17:26:27,041 [main] INFO  [c.a.c.s.gateway.scg.SentinelSCGAutoConfiguration] SentinelSCGAutoConfiguration.java:133 - [Sentinel SpringCloudGateway] register SentinelGatewayBlockExceptionHandler
+2023-03-14 17:26:28,112 [main] INFO  [o.s.boot.web.embedded.netty.NettyWebServer] NettyWebServer.java:111 - Netty started on port 8080
+2023-03-14 17:26:29,386 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:26:30,691 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:26:30,941 [main] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:76 - nacos registry, DEFAULT_GROUP ix-gateway 169.254.250.17:8080 register finished
+2023-03-14 17:26:31,165 [main] INFO  [c.a.c.n.discovery.GatewayLocatorHeartBeatPublisher] GatewayLocatorHeartBeatPublisher.java:64 - Start nacos gateway locator heartBeat task scheduler.
+2023-03-14 17:26:31,210 [main] INFO  [com.ix.gateway.GatewayApplication] StartupInfoLogger.java:57 - Started GatewayApplication in 16.25 seconds (process running for 20.255)
+2023-03-14 17:26:31,228 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-gateway-dev.yml, group=DEFAULT_GROUP
+2023-03-14 17:26:31,230 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-app-dev.yml, group=DEFAULT_GROUP
+2023-03-14 17:34:09,188 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:95 - De-registering from Nacos Server now...
+2023-03-14 17:34:09,217 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:115 - De-registration finished.
+2023-03-14 17:59:48,450 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 8.0.0.Final
+2023-03-14 17:59:48,641 [main] INFO  [com.ix.gateway.GatewayApplication] StartupInfoLogger.java:51 - Starting GatewayApplication using Java 17.0.2 with PID 23876 (E:\JAVA\my_projects\IX_Cloud\ix-gateway\target\classes started by 1617595881@qq.com in E:\JAVA\my_projects\IX_Cloud)
+2023-03-14 17:59:48,643 [main] INFO  [com.ix.gateway.GatewayApplication] SpringApplication.java:638 - The following 1 profile is active: "dev"
+2023-03-14 17:59:48,734 [main] INFO  [c.a.cloud.nacos.configdata.NacosConfigDataLoader] DeferredLog.java:250 - [Nacos Config] Load config[dataId=ix-gateway-dev.yml, group=DEFAULT_GROUP] success
+2023-03-14 17:59:48,735 [main] INFO  [c.a.cloud.nacos.configdata.NacosConfigDataLoader] DeferredLog.java:250 - [Nacos Config] Load config[dataId=ix-app-dev.yml, group=DEFAULT_GROUP] success
+2023-03-14 17:59:51,100 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:282 - BeanFactory id=31ac4d16-8f76-3c9e-b7be-18fdfc921734
+2023-03-14 17:59:51,520 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 17:59:51,522 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 17:59:51,524 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:409 - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-14 17:59:52,489 [main] INFO  [o.s.c.g.config.LocalResponseCacheAutoConfiguration] LocalResponseCacheAutoConfiguration.java:86 - Initializing Caffeine
+2023-03-14 17:59:53,867 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:59:55,233 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:59:55,392 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [After]
+2023-03-14 17:59:55,393 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Before]
+2023-03-14 17:59:55,394 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Between]
+2023-03-14 17:59:55,394 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Cookie]
+2023-03-14 17:59:55,395 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Header]
+2023-03-14 17:59:55,395 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Host]
+2023-03-14 17:59:55,395 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Method]
+2023-03-14 17:59:55,395 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Path]
+2023-03-14 17:59:55,396 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Query]
+2023-03-14 17:59:55,396 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [ReadBody]
+2023-03-14 17:59:55,397 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [RemoteAddr]
+2023-03-14 17:59:55,397 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2023-03-14 17:59:55,397 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [Weight]
+2023-03-14 17:59:55,398 [main] INFO  [o.s.c.gateway.route.RouteDefinitionRouteLocator] RouteDefinitionRouteLocator.java:89 - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-03-14 17:59:56,742 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 17:59:57,015 [main] INFO  [c.a.c.s.gateway.scg.SentinelSCGAutoConfiguration] SentinelSCGAutoConfiguration.java:143 - [Sentinel SpringCloudGateway] register SentinelGatewayFilter with order: -2147483648
+2023-03-14 17:59:57,616 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:58 - Exposing 19 endpoint(s) beneath base path '/actuator'
+2023-03-14 17:59:57,777 [main] INFO  [c.a.c.s.gateway.scg.SentinelSCGAutoConfiguration] SentinelSCGAutoConfiguration.java:133 - [Sentinel SpringCloudGateway] register SentinelGatewayBlockExceptionHandler
+2023-03-14 17:59:59,148 [main] INFO  [o.s.boot.web.embedded.netty.NettyWebServer] NettyWebServer.java:111 - Netty started on port 8080
+2023-03-14 18:00:00,482 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 18:00:01,801 [main] INFO  [org.springframework.cloud.commons.util.InetUtils] InetUtils.java:170 - Cannot determine local hostname
+2023-03-14 18:00:02,090 [main] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:76 - nacos registry, DEFAULT_GROUP ix-gateway 169.254.250.17:8080 register finished
+2023-03-14 18:00:02,385 [main] INFO  [c.a.c.n.discovery.GatewayLocatorHeartBeatPublisher] GatewayLocatorHeartBeatPublisher.java:64 - Start nacos gateway locator heartBeat task scheduler.
+2023-03-14 18:00:02,427 [main] INFO  [com.ix.gateway.GatewayApplication] StartupInfoLogger.java:57 - Started GatewayApplication in 18.319 seconds (process running for 21.776)
+2023-03-14 18:00:02,447 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-gateway-dev.yml, group=DEFAULT_GROUP
+2023-03-14 18:00:02,449 [main] INFO  [c.a.cloud.nacos.refresh.NacosContextRefresher] NacosContextRefresher.java:129 - [Nacos Config] Listening config: dataId=ix-app-dev.yml, group=DEFAULT_GROUP
+2023-03-14 18:24:50,700 [reactor-http-nio-5] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/system/user/profile,异常信息:Connection timed out: no further information: /169.254.250.17:8082
+2023-03-14 19:42:57,020 [reactor-http-nio-5] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/login/captcha,异常信息:404 NOT_FOUND
+2023-03-14 20:26:09,405 [reactor-http-nio-7] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/system/menu/list,异常信息:Connection timed out: no further information: /169.254.250.17:8082
+2023-03-14 21:53:12,188 [reactor-http-nio-12] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/system/user/getInfo,异常信息:Connection timed out: no further information: /169.254.250.17:8082
+2023-03-14 22:25:24,180 [reactor-http-nio-7] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/system/user/getInfo,异常信息:Connection timed out: no further information: /169.254.250.17:8082
+2023-03-14 23:16:06,085 [reactor-http-nio-1] ERROR [com.ix.gateway.handler.IXExceptionHandler] IXExceptionHandler.java:65 - [网关异常处理]请求路径:/system/user/getInfo,异常信息:Connection timed out: no further information: /169.254.250.17:8082
+2023-03-14 23:24:43,191 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:95 - De-registering from Nacos Server now...
+2023-03-14 23:24:43,224 [SpringApplicationShutdownHook] INFO  [c.a.cloud.nacos.registry.NacosServiceRegistry] NacosServiceRegistry.java:115 - De-registration finished.

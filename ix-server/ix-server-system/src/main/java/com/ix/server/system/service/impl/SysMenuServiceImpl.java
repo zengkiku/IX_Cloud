@@ -57,8 +57,7 @@ public class SysMenuServiceImpl implements ISysMenuService {
 		// 管理员显示所有菜单信息
 		if (SysUser.isAdmin(userId)) {
 			menuList = menuMapper.selectMenuList(menu);
-		}
-		else {
+		} else {
 			menu.getParams().put("userId", userId);
 			menuList = menuMapper.selectMenuListByUserId(menu);
 		}
@@ -132,7 +131,7 @@ public class SysMenuServiceImpl implements ISysMenuService {
 				router.setRedirect("noRedirect");
 				router.setRoutes(buildMenus(cMenus));
 			}
-			else if (isMeunFrame(menu)) {
+/*			else if (isMeunFrame(menu)) {
 				List<RouterVo> childrenList = new ArrayList<>();
 				RouterVo children = new RouterVo();
 				children.setPath(menu.getPath());
@@ -141,7 +140,7 @@ public class SysMenuServiceImpl implements ISysMenuService {
 				children.setMeta(new MetaVo(menu.getMenuName(), menu.getIcon()));
 				childrenList.add(children);
 				router.setRoutes(childrenList);
-			}
+			}*/
 			routers.add(router);
 		}
 		return routers;
@@ -303,8 +302,10 @@ public class SysMenuServiceImpl implements ISysMenuService {
 	 * @return 结果
 	 */
 	private boolean isMeunFrame(SysMenu menu) {
+//		return menu.getParentId().intValue() == 0 && UserConstants.TYPE_MENU.equals(menu.getMenuType())
+//				&& menu.getIsFrame().equals(UserConstants.NO_FRAME);
 		return menu.getParentId().intValue() == 0 && UserConstants.TYPE_MENU.equals(menu.getMenuType())
-				&& menu.getIsFrame().equals(UserConstants.NO_FRAME);
+				&& UserConstants.NO_FRAME.equals(menu.getIsFrame());
 	}
 
 	/**

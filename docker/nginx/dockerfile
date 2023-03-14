@@ -1,0 +1,9 @@
+# 基础镜像
+FROM nginx
+# author
+MAINTAINER ix
+
+# 复制conf文件到路径
+COPY ./conf/nginx.conf /zeng/twt/docker/nginx/nginx.conf
+# 复制html文件到路径
+COPY ./html /zeng/twt/ix-ui

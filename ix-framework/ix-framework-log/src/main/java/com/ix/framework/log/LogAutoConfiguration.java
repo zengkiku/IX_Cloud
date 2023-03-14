@@ -4,6 +4,7 @@ import com.ix.api.system.feign.RemoteLogService;
 import com.ix.framework.log.aspect.SysLogAspect;
 import com.ix.framework.log.event.listener.SysLoginLogListener;
 import com.ix.framework.log.event.listener.SysSysOperationLogEventLogListener;
+import jakarta.annotation.Resource;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

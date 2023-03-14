@@ -20,6 +20,7 @@ import com.alibaba.csp.sentinel.adapter.servlet.callback.WebCallbackManager;
 import com.alibaba.csp.sentinel.dashboard.auth.AuthorizationInterceptor;
 import com.alibaba.csp.sentinel.dashboard.auth.LoginAuthenticationFilter;
 import com.alibaba.csp.sentinel.util.StringUtil;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,15 +42,14 @@ import java.util.Set;
  * @author leyou
  */
 @Configuration
+@RequiredArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
 
 	private final Logger logger = LoggerFactory.getLogger(WebConfig.class);
 
-	@Autowired
-	private LoginAuthenticationFilter loginAuthenticationFilter;
+	private final LoginAuthenticationFilter loginAuthenticationFilter;
 
-	@Autowired
-	private AuthorizationInterceptor authorizationInterceptor;
+	private final AuthorizationInterceptor authorizationInterceptor;
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {

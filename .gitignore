@@ -38,9 +38,12 @@ target/
 *.zip
 *.tar
 *.tar.gz
+*.jar
 
 ### logs ####
+/logs
 /logs/
+/logs/**
 *.log
 *.log.gz
 

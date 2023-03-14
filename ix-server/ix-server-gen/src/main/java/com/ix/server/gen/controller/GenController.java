@@ -14,6 +14,7 @@ import com.ix.server.gen.service.IGenTableColumnService;
 import com.ix.server.gen.service.IGenTableService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -34,13 +35,12 @@ import java.util.Map;
 @Tag(description = "GenController", name = "代码生成")
 @RequestMapping
 @RestController
+@RequiredArgsConstructor
 public class GenController extends IXController {
 
-	@Autowired
-	private IGenTableService genTableService;
+	private final IGenTableService genTableService;
 
-	@Autowired
-	private IGenTableColumnService genTableColumnService;
+	private final IGenTableColumnService genTableColumnService;
 
 	/**
 	 * 查询代码生成列表

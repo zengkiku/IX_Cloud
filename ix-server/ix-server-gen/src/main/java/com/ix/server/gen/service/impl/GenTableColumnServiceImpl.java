@@ -6,6 +6,7 @@ import com.ix.api.gen.domain.GenTableColumn;
 import com.ix.framework.utils.Convert;
 import com.ix.server.gen.mapper.GenTableColumnMapper;
 import com.ix.server.gen.service.IGenTableColumnService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +16,10 @@ import org.springframework.stereotype.Service;
  * @Description: 业务字段 服务层实现
  */
 @Service
+@RequiredArgsConstructor
 public class GenTableColumnServiceImpl implements IGenTableColumnService {
 
-	@Autowired
-	private GenTableColumnMapper genTableColumnMapper;
+	private final GenTableColumnMapper genTableColumnMapper;
 
 	/**
 	 * 查询业务字段列表
