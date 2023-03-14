@@ -13,6 +13,7 @@ import com.ix.server.system.service.ISysDictDataService;
 import com.ix.server.system.service.ISysDictTypeService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -28,14 +29,15 @@ import java.util.List;
  */
 @Tag(description = "SysDictDataController", name = "数据字典信息")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/dictionaries/data")
 public class SysDictDataController extends IXController {
 
-	@Autowired
-	private ISysDictDataService dictDataService;
 
-	@Autowired
-	private ISysDictTypeService dictTypeService;
+	private final ISysDictDataService dictDataService;
+
+
+	private final ISysDictTypeService dictTypeService;
 
 	/**
 	 * 分页查询数据字典

@@ -11,6 +11,7 @@ import com.ix.framework.utils.poi.ExcelUtils;
 import com.ix.server.system.service.ISysLoginInfoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -25,11 +26,12 @@ import java.util.List;
  */
 @Tag(description = "SysLoginInfoController", name = "系统登录日志")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/loginInfo")
 public class SysLoginInfoController extends IXController {
 
-	@Autowired
-	private ISysLoginInfoService iSysLoginInfoService;
+
+	private final ISysLoginInfoService iSysLoginInfoService;
 
 	/**
 	 * 登录日志查询

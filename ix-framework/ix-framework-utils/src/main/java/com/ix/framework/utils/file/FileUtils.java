@@ -22,6 +22,9 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 * 字符常量：斜杠 {@code '/'}
 	 */
 	public static final char SLASH = '/';
+	public static final char DOT = '.';
+	public static final char UNDERLINE = '_';
+
 
 	/**
 	 * 字符常量：反斜杠 {@code '\\'}
@@ -177,6 +180,28 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		return filePath.substring(begin, len);
 	}
 
+	public static String getFileName(String filePath) {
+		if (null == filePath) {
+			return null;
+		}
+		int len = filePath.length();
+		if (0 == len) {
+			return filePath;
+		}
+		return filePath.split(String.valueOf(SLASH))[filePath.split(String.valueOf(SLASH)).length - 1];
+	}
+
+	public static String getFileSpaceName(String filePath) {
+		if (null == filePath) {
+			return null;
+		}
+		int len = filePath.length();
+		if (0 == len) {
+			return filePath;
+		}
+		return filePath.substring(0, filePath.lastIndexOf(SLASH) + 1);
+	}
+
 	/**
 	 * 获取文件后缀
 	 * @param path 文件路径
@@ -186,7 +211,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		if (TUtils.isEmpty(path)) {
 			return "";
 		}
-		return path.substring(path.lastIndexOf(".") + 1);
+		return path.substring(path.lastIndexOf(DOT) + 1);
 	}
 
 	/**
@@ -220,17 +245,22 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 * @return 百分号编码后的字符串
 	 */
 	public static String percentEncode(String s) throws UnsupportedEncodingException {
-		String encode = URLEncoder.encode(s, StandardCharsets.UTF_8.toString());
+		String encode = URLEncoder.encode(s, StandardCharsets.UTF_8);
 		return encode.replaceAll("\\+", "%20");
 	}
 
 	/**
 	 * 生成默认使用的上传路径
 	 * @param originalFilename 原文件名称
-	 * @return 上传路径 2022/06/05/1654356928000.jpg
+	 * @return 上传路径 /1994/06/18/19940618121212_kiku.jpg
 	 */
 	public static String defaultUploadPath(String originalFilename) {
-		return DateUtils.datePath() + "/" + System.currentTimeMillis() + "." + getSuffix(originalFilename);
+//		return DateUtils.datePath() + "/" + System.currentTimeMillis() + "." + getSuffix(originalFilename);
+		return SLASH + DateUtils.datePath() + SLASH + DateUtils.dateStr() + UNDERLINE + originalFilename;
+	}
+
+	public static String defaultUploadFileName(String originalFilename) {
+		return DateUtils.dateStr() + UNDERLINE + originalFilename;
 	}
 
 }

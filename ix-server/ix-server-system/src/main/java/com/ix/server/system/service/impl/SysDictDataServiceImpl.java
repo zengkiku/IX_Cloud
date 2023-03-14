@@ -4,6 +4,7 @@ import com.ix.api.system.domain.SysDictData;
 import com.ix.server.system.mapper.SysDictDataMapper;
 import com.ix.server.system.service.ISysDictDataService;
 import com.ix.server.system.utils.DictUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +16,10 @@ import java.util.List;
  * @Description: 字典 业务层
  */
 @Service
+@RequiredArgsConstructor
 public class SysDictDataServiceImpl implements ISysDictDataService {
 
-	@Autowired
-	private SysDictDataMapper dictDataMapper;
+	private final SysDictDataMapper dictDataMapper;
 
 	/**
 	 * 根据条件分页查询字典数据

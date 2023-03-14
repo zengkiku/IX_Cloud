@@ -3,7 +3,7 @@ package com.ix.server.dfs.manager;
 import cn.hutool.core.io.FastByteArrayOutputStream;
 import com.alibaba.nacos.common.utils.UuidUtils;
 import com.ix.framework.utils.StringUtils;
-import com.ix.server.dfs.config.MinIoClientConfig;
+import com.ix.server.dfs.config.MinioClientConfig;
 import groovy.util.logging.Slf4j;
 import io.minio.*;
 import io.minio.http.Method;
@@ -29,7 +29,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Component
 public class MinioManager {
-    final MinIoClientConfig minIoClientConfig;
+    final MinioClientConfig minioClientConfig;
 
     final MinioClient minioClient;
 
@@ -111,7 +111,7 @@ public class MinioManager {
         String fileName = UuidUtils.generateUuid() + originalFilename.substring(originalFilename.lastIndexOf("."));
         String objectName = DateUtils.toDateString(new Date()) + "/" + fileName;
         try {
-            PutObjectArgs objectArgs = PutObjectArgs.builder().bucket(minIoClientConfig.getBucketName()).object(objectName)
+            PutObjectArgs objectArgs = PutObjectArgs.builder().bucket(minioClientConfig.getBucketName()).object(objectName)
                     .stream(file.getInputStream(), file.getSize(), -1).contentType(file.getContentType()).build();
             //文件名称相同会覆盖
             minioClient.putObject(objectArgs);
@@ -130,7 +130,7 @@ public class MinioManager {
      */
     public String preview(String fileName) {
         // 查看文件地址
-        GetPresignedObjectUrlArgs build = new GetPresignedObjectUrlArgs().builder().bucket(minIoClientConfig.getBucketName()).object(fileName).method(Method.GET).build();
+        GetPresignedObjectUrlArgs build = GetPresignedObjectUrlArgs.builder().bucket(minioClientConfig.getBucketName()).object(fileName).method(Method.GET).build();
         try {
             String url = minioClient.getPresignedObjectUrl(build);
             return url;
@@ -148,7 +148,7 @@ public class MinioManager {
      * @return Boolean
      */
     public void download(String fileName, HttpServletResponse res) {
-        GetObjectArgs objectArgs = GetObjectArgs.builder().bucket(minIoClientConfig.getBucketName())
+        GetObjectArgs objectArgs = GetObjectArgs.builder().bucket(minioClientConfig.getBucketName())
                 .object(fileName).build();
         try (GetObjectResponse response = minioClient.getObject(objectArgs)) {
             byte[] buf = new byte[1024];
@@ -180,7 +180,7 @@ public class MinioManager {
      */
     public List<Item> listObjects() {
         Iterable<Result<Item>> results = minioClient.listObjects(
-                ListObjectsArgs.builder().bucket(minIoClientConfig.getBucketName()).build());
+                ListObjectsArgs.builder().bucket(minioClientConfig.getBucketName()).build());
         List<Item> items = new ArrayList<>();
         try {
             for (Result<Item> result : results) {
@@ -202,7 +202,7 @@ public class MinioManager {
      */
     public boolean remove(String fileName) {
         try {
-            minioClient.removeObject(RemoveObjectArgs.builder().bucket(minIoClientConfig.getBucketName()).object(fileName).build());
+            minioClient.removeObject(RemoveObjectArgs.builder().bucket(minioClientConfig.getBucketName()).object(fileName).build());
         } catch (Exception e) {
             return false;
         }

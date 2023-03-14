@@ -5,6 +5,7 @@ import com.ix.framework.utils.DateUtils;
 import com.ix.framework.utils.StringUtils;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisServerCommands;
 import org.springframework.data.redis.core.RedisCallback;
@@ -23,11 +24,11 @@ import java.util.*;
  */
 @Tag(description = "RedisController", name = "缓存监控")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/monitor/redis")
 public class RedisController {
 
-	@Autowired
-	private RedisTemplate<String, String> redisTemplate;
+	private final RedisTemplate<String, String> redisTemplate;
 
 	/**
 	 * 获取Redis信息

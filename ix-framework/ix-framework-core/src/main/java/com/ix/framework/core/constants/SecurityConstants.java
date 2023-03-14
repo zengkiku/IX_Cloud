@@ -55,7 +55,7 @@ public interface SecurityConstants {
 	/**
 	 * 项目的license
 	 */
-	String PROJECT_LICENSE = "https://www.twelvet.cn/docs/";
+	String PROJECT_LICENSE = "https://www.ix.cn/docs/";
 
 	/**
 	 * 内部请求标志

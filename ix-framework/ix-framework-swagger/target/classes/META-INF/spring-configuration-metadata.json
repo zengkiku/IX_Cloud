@@ -11,7 +11,8 @@
       "name": "swagger.base-package",
       "type": "java.lang.String",
       "description": "swagger会解析的包路径",
-      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties",
+      "defaultValue": ""
     },
     {
       "name": "swagger.base-path",
@@ -23,13 +24,15 @@
       "name": "swagger.description",
       "type": "java.lang.String",
       "description": "描述",
-      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties",
+      "defaultValue": ""
     },
     {
       "name": "swagger.enabled",
       "type": "java.lang.Boolean",
       "description": "是否开启swagger",
-      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties",
+      "defaultValue": true
     },
     {
       "name": "swagger.exclude-path",
@@ -65,7 +68,8 @@
       "name": "swagger.title",
       "type": "java.lang.String",
       "description": "标题",
-      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties",
+      "defaultValue": ""
     },
     {
       "name": "swagger.token-url",
@@ -77,7 +81,8 @@
       "name": "swagger.version",
       "type": "java.lang.String",
       "description": "版本",
-      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties"
+      "sourceType": "com.ix.framework.swagger.config.SwaggerProperties",
+      "defaultValue": ""
     }
   ],
   "hints": []

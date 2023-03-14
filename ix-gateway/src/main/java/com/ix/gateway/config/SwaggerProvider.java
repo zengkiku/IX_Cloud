@@ -1,5 +1,6 @@
 package com.ix.gateway.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.config.GatewayProperties;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -19,13 +20,14 @@ import java.util.List;
  */
 @Primary
 @Component
+@RequiredArgsConstructor
 public class SwaggerProvider implements SwaggerResourcesProvider {
 
-	@Autowired
-	private RouteLocator routeLocator;
 
-	@Autowired
-	private GatewayProperties gatewayProperties;
+	private final RouteLocator routeLocator;
+
+
+	private final GatewayProperties gatewayProperties;
 
 	@Override
 	public List<SwaggerResource> get() {

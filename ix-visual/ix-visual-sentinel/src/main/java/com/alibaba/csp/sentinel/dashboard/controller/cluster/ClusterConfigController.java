@@ -33,6 +33,7 @@ import com.alibaba.csp.sentinel.dashboard.util.VersionUtils;
 import com.alibaba.csp.sentinel.util.StringUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,7 @@ import java.util.concurrent.ExecutionException;
  * @since 1.4.0
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "/cluster")
 public class ClusterConfigController {
 
@@ -54,11 +56,9 @@ public class ClusterConfigController {
 
 	private final SentinelVersion version140 = new SentinelVersion().setMajorVersion(1).setMinorVersion(4);
 
-	@Autowired
-	private AppManagement appManagement;
+	private final AppManagement appManagement;
 
-	@Autowired
-	private ClusterConfigService clusterConfigService;
+	private final ClusterConfigService clusterConfigService;
 
 	@PostMapping("/config/modify_single")
 	public Result<Boolean> apiModifyClusterConfig(@RequestBody String payload) {

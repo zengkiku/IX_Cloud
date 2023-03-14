@@ -11,6 +11,7 @@ import com.ix.framework.utils.StringUtils;
 import com.ix.framework.utils.TUtils;
 import com.ix.server.system.mapper.*;
 import com.ix.server.system.service.ISysUserService;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,24 +28,20 @@ import java.util.List;
  * @Description: 用户信息
  */
 @Service
+@RequiredArgsConstructor
 public class SysUserServiceImpl implements ISysUserService {
 
 	private static final Logger log = LoggerFactory.getLogger(SysUserServiceImpl.class);
 
-	@Autowired
-	private SysUserMapper sysUserMapper;
+	private final SysUserMapper sysUserMapper;
 
-	@Autowired
-	private SysRoleMapper sysRoleMapper;
+	private final SysRoleMapper sysRoleMapper;
 
-	@Autowired
-	private SysPostMapper sysPostMapper;
+	private final SysPostMapper sysPostMapper;
 
-	@Autowired
-	private SysUserRoleMapper sysUserRoleMapper;
+	private final SysUserRoleMapper sysUserRoleMapper;
 
-	@Autowired
-	private SysUserPostMapper sysUserPostMapper;
+	private final SysUserPostMapper sysUserPostMapper;
 
 	/**
 	 * 根据条件分页查询用户列表

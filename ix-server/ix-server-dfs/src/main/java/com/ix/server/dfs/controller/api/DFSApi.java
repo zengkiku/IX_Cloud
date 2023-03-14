@@ -7,6 +7,8 @@ import com.ix.framework.core.domain.R;
 import com.ix.framework.security.annotation.AuthIgnore;
 import com.ix.framework.utils.file.FileUtils;
 import com.ix.server.dfs.service.IDFSService;
+import com.ix.server.dfs.service.impl.DFSServiceMinioImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +22,13 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @AuthIgnore
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api")
 public class DFSApi extends IXController {
 
-	@Autowired
-	private IDFSService sysFileService;
+//	@Autowired
+//	private IDFSService dfsServiceMinioImpl;
+	private final DFSServiceMinioImpl dfsServiceMinioImpl;
 
 	/**
 	 * 系统单文件上传API
@@ -34,7 +38,7 @@ public class DFSApi extends IXController {
 	@PostMapping("/upload")
 	public R<SysFile> upload(MultipartFile file) {
 		// 上传并返回访问地址
-		SysDfs sysDfs = sysFileService.uploadFile(file);
+		SysDfs sysDfs = dfsServiceMinioImpl.uploadFile(file);
 
 		String path = sysDfs.getPath();
 

@@ -13,6 +13,10 @@
     <description>系统核心服务</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
         <!--通用核心-->
         <dependency>

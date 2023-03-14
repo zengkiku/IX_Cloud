@@ -10,6 +10,7 @@ import com.ix.server.system.service.ISysPermissionService;
 import com.ix.server.system.service.ISysUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,14 +26,15 @@ import java.util.Set;
  */
 @Tag(description = "SysUserApi", name = "用户信息API")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/user")
 public class SysUserApi extends IXController {
 
-	@Autowired
-	private ISysUserService iSysUserService;
 
-	@Autowired
-	private ISysPermissionService iSysPermissionService;
+	private final ISysUserService iSysUserService;
+
+
+	private final ISysPermissionService iSysPermissionService;
 
 	/**
 	 * 获取当前用户信息(认证中心服务专用)

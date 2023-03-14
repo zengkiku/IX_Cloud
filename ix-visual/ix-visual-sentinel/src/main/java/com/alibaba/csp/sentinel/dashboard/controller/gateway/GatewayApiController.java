@@ -27,6 +27,7 @@ import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.api.ApiPredicateItem
 import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.api.UpdateApiReqVo;
 import com.alibaba.csp.sentinel.dashboard.repository.gateway.InMemApiDefinitionStore;
 import com.alibaba.csp.sentinel.util.StringUtil;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,16 +46,15 @@ import static com.alibaba.csp.sentinel.adapter.gateway.common.SentinelGatewayCon
  * @since 1.7.0
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "/gateway/api")
 public class GatewayApiController {
 
 	private final Logger logger = LoggerFactory.getLogger(GatewayApiController.class);
 
-	@Autowired
-	private InMemApiDefinitionStore repository;
+	private final InMemApiDefinitionStore repository;
 
-	@Autowired
-	private SentinelApiClient sentinelApiClient;
+	private final SentinelApiClient sentinelApiClient;
 
 	@GetMapping("/list.json")
 	@AuthAction(AuthService.PrivilegeType.READ_RULE)

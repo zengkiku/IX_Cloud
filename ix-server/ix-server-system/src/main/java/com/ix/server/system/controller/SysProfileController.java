@@ -20,6 +20,7 @@ import com.ix.framework.utils.StringUtils;
 import com.ix.server.system.service.ISysUserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,14 +32,15 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Tag(description = "SysProfileController", name = "DFS控制器")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/user/profile")
 public class SysProfileController extends IXController {
 
-	@Autowired
-	private ISysUserService userService;
 
-	@Autowired
-	private RemoteFileService remoteFileService;
+	private final ISysUserService userService;
+
+
+	private final RemoteFileService remoteFileService;
 
 	/**
 	 * 个人信息

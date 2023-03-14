@@ -89,6 +89,11 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 		return DateFormatUtils.format(now, PATH_YYYY_MM_DD);
 	}
 
+	public static String dateStr() {
+		Date now = new Date();
+		return DateFormatUtils.format(now, YYYYMMDDHHMMSS);
+	}
+
 	/**
 	 * 日期路径 即年/月/日 如20180808
 	 */
