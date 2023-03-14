@@ -17,6 +17,7 @@ import com.ix.server.job.util.CronUtils;
 import com.ix.server.job.util.ScheduleUtils;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -32,11 +33,11 @@ import java.util.List;
  */
 @Tag(description = "SysJobController", name = "调度任务信息操作处理")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/cron")
 public class SysJobController extends IXController {
 
-	@Autowired
-	private ISysJobService jobService;
+	private final ISysJobService jobService;
 
 	/**
 	 * 查询定时任务列表

@@ -11,6 +11,7 @@ import com.ix.framework.utils.poi.ExcelUtils;
 import com.ix.server.job.service.ISysJobLogService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -25,11 +26,11 @@ import java.util.List;
  */
 @Tag(description = "SysJobLogController", name = "调度日志操作处理")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/log")
 public class SysJobLogController extends IXController {
 
-	@Autowired
-	private ISysJobLogService jobLogService;
+	private final ISysJobLogService jobLogService;
 
 	/**
 	 * 查询定时任务调度日志列表

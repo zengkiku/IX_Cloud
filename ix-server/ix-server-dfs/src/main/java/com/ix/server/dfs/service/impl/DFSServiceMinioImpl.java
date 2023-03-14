@@ -114,7 +114,7 @@ public class DFSServiceMinioImpl implements IDFSService {
 
             SysDfs sysDfs = new SysDfs();
             sysDfs.setSize(file.getSize());
-            sysDfs.setPath(filePath);
+            sysDfs.setPath(FileUtils.SLASH + minioClientConfig.getBucketName() + filePath);
             sysDfs.setSpaceName(FileUtils.getFileSpaceName(filePath));
             sysDfs.setType(FileUtils.getSuffix(originalFilename));
             sysDfs.setFileName(FileUtils.getFileName(filePath));

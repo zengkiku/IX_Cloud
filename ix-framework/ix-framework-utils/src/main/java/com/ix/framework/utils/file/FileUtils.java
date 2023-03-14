@@ -252,11 +252,11 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	/**
 	 * 生成默认使用的上传路径
 	 * @param originalFilename 原文件名称
-	 * @return 上传路径 /1994/06/18/19940618121212_kiku.jpg
+	 * @return 上传路径 /jpg/1994-06-18/19940618121212_kiku.jpg
 	 */
 	public static String defaultUploadPath(String originalFilename) {
 //		return DateUtils.datePath() + "/" + System.currentTimeMillis() + "." + getSuffix(originalFilename);
-		return SLASH + DateUtils.datePath() + SLASH + DateUtils.dateStr() + UNDERLINE + originalFilename;
+		return SLASH + getSuffix(originalFilename) + SLASH + DateUtils.datePath() + SLASH + DateUtils.dateStr() + UNDERLINE + originalFilename;
 	}
 
 	public static String defaultUploadFileName(String originalFilename) {

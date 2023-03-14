@@ -13,6 +13,9 @@ spring:
       discovery:
         server-addr: ${NACOS_HOST:ix-nacos}:${NACOS_PORT:8848}
         namespace: @nacos.namespace@
+    # 暂时修复因sentinel导致的无法启动
+    openfeign:
+      lazy-attributes-resolution: true
 
 management:
   endpoints:

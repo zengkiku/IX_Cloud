@@ -17,6 +17,7 @@ import com.ix.server.gen.service.IGenTableService;
 import com.ix.server.gen.utils.GenUtils;
 import com.ix.server.gen.utils.VelocityInitializer;
 import com.ix.server.gen.utils.VelocityUtils;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -44,15 +45,13 @@ import java.util.zip.ZipOutputStream;
  * @Description: 业务 服务层实现
  */
 @Service
+@RequiredArgsConstructor
 public class GenTableServiceImpl implements IGenTableService {
-
 	private static final Logger log = LoggerFactory.getLogger(GenTableServiceImpl.class);
 
-	@Autowired
-	private GenTableMapper genTableMapper;
+	private final GenTableMapper genTableMapper;
 
-	@Autowired
-	private GenTableColumnMapper genTableColumnMapper;
+	private final GenTableColumnMapper genTableColumnMapper;
 
 	/**
 	 * 查询业务信息

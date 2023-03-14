@@ -32,11 +32,14 @@ public class WebSecurityConfigurer {
         SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
         successHandler.setTargetUrlParameter("redirectTo");
         successHandler.setDefaultTargetUrl(adminContextPath + "/");
-        http.headers().frameOptions().disable().and().authorizeRequests()
+        http.headers()
+                .frameOptions().disable()
+                .and().authorizeRequests()
                 .requestMatchers(adminContextPath + "/assets/**", adminContextPath + "/login",
                         adminContextPath + "/instances/**", adminContextPath + "/actuator/**")
-                .permitAll().anyRequest().authenticated().and().formLogin().loginPage(adminContextPath + "/login")
-                .successHandler(successHandler).and().logout().logoutUrl(adminContextPath + "/logout").and().httpBasic()
+                .permitAll().anyRequest().authenticated()
+                .and().formLogin().loginPage(adminContextPath + "/login").successHandler(successHandler)
+                .and().logout().logoutUrl(adminContextPath + "/logout").and().httpBasic()
                 .and().csrf().disable();
         return http.build();
     }
