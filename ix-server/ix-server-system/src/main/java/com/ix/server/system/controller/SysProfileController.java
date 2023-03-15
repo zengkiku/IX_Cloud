@@ -53,15 +53,10 @@ public class SysProfileController extends IXController {
     @GetMapping
     public JsonResult<UserInfoVo> profile() {
         String username = SecurityUtils.getUsername();
-        SysUser user = userService.selectUserByUserName(username, true);
-
         UserInfoVo userInfoVo = new UserInfoVo();
 
-//		userInfoVo.setUser(user);
-//		userInfoVo.setPostGroup(userService.selectUserPostGroup(username));
-//		userInfoVo.setRoleGroup(userService.selectUserRoleGroup(username));
         CompletableFuture<Void> sysUserCompletableFuture = CompletableFuture.
-                runAsync(() -> userInfoVo.setUser(userService.selectUserByUserName(username, true)));
+                runAsync(() -> userInfoVo.setUser(userService.selectUserByUserName(username, false)));
         CompletableFuture<Void> postGroupCompletableFuture = CompletableFuture
                 .runAsync(() -> userInfoVo.setPostGroup(userService.selectUserPostGroup(username)));
         CompletableFuture<Void> roleGroupCompletableFuture = CompletableFuture

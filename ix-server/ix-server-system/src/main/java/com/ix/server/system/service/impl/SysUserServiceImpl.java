@@ -68,18 +68,11 @@ public class SysUserServiceImpl implements ISysUserService {
 		sysUser.setDept(sysDept);
 		if (hidden) {
 			// 隐藏手机号码/邮箱
-			String phoneNumber = sysUser.getPhonenumber();
-			String email = sysUser.getEmail();
-
-			String phoneNumberHide = StringUtils.hidePhone(phoneNumber);
-			String emailHide = StringUtils.hideEmail(email);
-
-			sysUser.setPhonenumber(phoneNumberHide);
-			sysUser.setEmail(emailHide);
-
-			// 隐藏密码
-			sysUser.setPassword(null);
+			sysUser.setPhonenumber(StringUtils.hidePhone(sysUser.getPhonenumber()));
+			sysUser.setEmail(StringUtils.hideEmail(sysUser.getEmail()));
 		}
+		// 隐藏密码
+		sysUser.setPassword(null);
 
 		return sysUser;
 	}
