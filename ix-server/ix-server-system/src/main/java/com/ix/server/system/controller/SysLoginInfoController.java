@@ -40,7 +40,7 @@ public class SysLoginInfoController extends IXController {
 	 */
 	@Operation(summary = "登录日志查询")
 	@GetMapping("/pageQuery")
-	@PreAuthorize("@role.hasPermi('system:logininfor:list')")
+	@PreAuthorize("@role.hasPermi('system:loginInfo:list')")
 	public JsonResult<TableDataInfo> pageQuery(SysLoginInfo loginInfo) {
 		PageUtils.startPage();
 		List<SysLoginInfo> list = iSysLoginInfoService.selectLoginInfoList(loginInfo);
@@ -54,7 +54,7 @@ public class SysLoginInfoController extends IXController {
 	 */
 	@Operation(summary = "批量删除日志")
 	@DeleteMapping("/{infoIds}")
-	@PreAuthorize("@role.hasPermi('system:logininfor:remove')")
+	@PreAuthorize("@role.hasPermi('system:loginInfo:remove')")
 	public JsonResult<String> remove(@PathVariable Long[] infoIds) {
 		return json(iSysLoginInfoService.deleteLoginInfoByIds(infoIds));
 	}
@@ -66,7 +66,7 @@ public class SysLoginInfoController extends IXController {
 	@Operation(summary = "清空登录日志")
 	@Log(service = "登陆日志", businessType = BusinessType.CLEAN)
 	@DeleteMapping("/clean")
-	@PreAuthorize("@role.hasPermi('system:logininfor:remove')")
+	@PreAuthorize("@role.hasPermi('system:loginInfo:remove')")
 	public JsonResult<String> clean() {
 		iSysLoginInfoService.cleanLoginInfo();
 		return JsonResult.success();
@@ -80,7 +80,7 @@ public class SysLoginInfoController extends IXController {
 	@Operation(summary = "导出Excel")
 	@Log(service = "登陆日志", businessType = BusinessType.EXPORT)
 	@PostMapping("/export")
-	@PreAuthorize("@role.hasPermi('system:logininfor:export')")
+	@PreAuthorize("@role.hasPermi('system:loginInfo:export')")
 	public void export(HttpServletResponse response, @RequestBody SysLoginInfo loginInfo) {
 		List<SysLoginInfo> list = iSysLoginInfoService.selectLoginInfoList(loginInfo);
 		ExcelUtils<SysLoginInfo> excelUtils = new ExcelUtils<>(SysLoginInfo.class);

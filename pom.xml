@@ -448,7 +448,7 @@
                 <log.redis.host>127.0.0.1</log.redis.host>
                 <log.redis.password></log.redis.password>
                 <log.redis.port>6379</log.redis.port>
-                <log.redis.key>tw.log</log.redis.key>
+                <log.redis.key>ix.log</log.redis.key>
                 <log.redis.db>1</log.redis.db>
             </properties>
             <activation>
@@ -487,7 +487,7 @@
                 <log.redis.host>127.0.0.1</log.redis.host>
                 <log.redis.password></log.redis.password>
                 <log.redis.port>6379</log.redis.port>
-                <log.redis.key>tw.log</log.redis.key>
+                <log.redis.key>ix.log</log.redis.key>
                 <log.redis.db>1</log.redis.db>
             </properties>
         </profile>

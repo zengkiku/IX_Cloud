@@ -38,6 +38,7 @@ public class DFSController extends IXController {
 	 */
 	@Operation(summary = "多文件上传")
 	@Log(service = "多文件上传", businessType = BusinessType.IMPORT)
+	@PreAuthorize("@role.hasPermi('system:dfs:upload')")
 	@PostMapping("/batchUpload")
 	public JsonResult<List<SysDfs>> batchUpload(MultipartFile[] files) {
 		// 上传并返回访问地址
@@ -53,6 +54,7 @@ public class DFSController extends IXController {
 	 */
 	@Operation(summary = "单文件上传")
 	@PostMapping("/commonUpload")
+	@PreAuthorize("@role.hasPermi('system:dfs:upload')")
 	@Log(service = "单文件上传", businessType = BusinessType.IMPORT)
 	public JsonResult<String> commonUpload(MultipartFile file) {
 		// 上传并返回访问地址
@@ -66,7 +68,7 @@ public class DFSController extends IXController {
 	 * @return JsonResult<String>
 	 */
 	@Operation(summary = "批量删除文件")
-	@PreAuthorize("@role.hasPermi('dfs:dfs:remove')")
+	@PreAuthorize("@role.hasPermi('system:dfs:remove')")
 	@Log(service = "删除文件", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{fileIds}")
 	public JsonResult<String> deleteFile(@PathVariable Long[] fileIds) {
@@ -80,7 +82,7 @@ public class DFSController extends IXController {
 	 * @return JsonResult<TableDataInfo>
 	 */
 	@Operation(summary = "分页查询")
-	@PreAuthorize("@role.hasPermi('dfs:dfs:list')")
+	@PreAuthorize("@role.hasPermi('system:dfs:list')")
 	@GetMapping("/pageQuery")
 	public JsonResult<TableDataInfo> pageQuery(SysDfs sysDfs) {
 		PageUtils.startPage();

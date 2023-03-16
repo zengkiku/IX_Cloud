@@ -33,6 +33,7 @@ nbdist/
 
 ### maven ###
 target/
+*.class
 *.war
 *.ear
 *.zip

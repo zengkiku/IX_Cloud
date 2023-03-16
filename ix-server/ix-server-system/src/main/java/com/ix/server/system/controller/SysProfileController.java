@@ -56,7 +56,7 @@ public class SysProfileController extends IXController {
         UserInfoVo userInfoVo = new UserInfoVo();
 
         CompletableFuture<Void> sysUserCompletableFuture = CompletableFuture.
-                runAsync(() -> userInfoVo.setUser(userService.selectUserByUserName(username, false)));
+                runAsync(() -> userInfoVo.setUser(userService.selectUserByUserName(username, true)));
         CompletableFuture<Void> postGroupCompletableFuture = CompletableFuture
                 .runAsync(() -> userInfoVo.setPostGroup(userService.selectUserPostGroup(username)));
         CompletableFuture<Void> roleGroupCompletableFuture = CompletableFuture

@@ -70,9 +70,10 @@ public class SysUserServiceImpl implements ISysUserService {
 			// 隐藏手机号码/邮箱
 			sysUser.setPhonenumber(StringUtils.hidePhone(sysUser.getPhonenumber()));
 			sysUser.setEmail(StringUtils.hideEmail(sysUser.getEmail()));
+			// 隐藏密码
+			sysUser.setPassword(null);
 		}
-		// 隐藏密码
-		sysUser.setPassword(null);
+
 
 		return sysUser;
 	}
@@ -144,9 +145,9 @@ public class SysUserServiceImpl implements ISysUserService {
 	 */
 	@Override
 	public String checkPhoneUnique(SysUser user) {
-		Long userId = TUtils.isEmpty(user.getUserId()) ? -1L : user.getUserId();
+		long userId = TUtils.isEmpty(user.getUserId()) ? -1L : user.getUserId();
 		SysUser info = sysUserMapper.checkPhoneUnique(user.getPhonenumber());
-		if (TUtils.isNotEmpty(info) && info.getUserId().longValue() != userId.longValue()) {
+		if (TUtils.isNotEmpty(info) && info.getUserId() != userId) {
 			return UserConstants.NOT_UNIQUE;
 		}
 		return UserConstants.UNIQUE;
@@ -159,9 +160,9 @@ public class SysUserServiceImpl implements ISysUserService {
 	 */
 	@Override
 	public String checkEmailUnique(SysUser user) {
-		Long userId = TUtils.isEmpty(user.getUserId()) ? -1L : user.getUserId();
+		long userId = TUtils.isEmpty(user.getUserId()) ? -1L : user.getUserId();
 		SysUser info = sysUserMapper.checkEmailUnique(user.getEmail());
-		if (TUtils.isNotEmpty(info) && info.getUserId().longValue() != userId.longValue()) {
+		if (TUtils.isNotEmpty(info) && info.getUserId() != userId) {
 			return UserConstants.NOT_UNIQUE;
 		}
 		return UserConstants.UNIQUE;

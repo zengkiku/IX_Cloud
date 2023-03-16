@@ -90,16 +90,45 @@ public class SysMenuServiceImpl implements ISysMenuService {
      * @param userId 用户名称
      * @return 菜单列表
      */
+//    @Override
+//    public List<SysMenu> selectMenuTreeByUserId(Long userId) {
+//        List<SysMenu> menus;
+//        if (SecurityUtils.isAdmin(userId)) {
+//            menus = menuMapper.selectMenuTreeAll();
+//        } else {
+//            menus = menuMapper.selectMenuTreeByUserId(userId);
+//        }
+//        return getChildPerms(menus, 0);
+//    }
+
     @Override
     public List<SysMenu> selectMenuTreeByUserId(Long userId) {
-        List<SysMenu> menus;
-        if (SecurityUtils.isAdmin(userId)) {
-            menus = menuMapper.selectMenuTreeAll();
-        } else {
-            menus = menuMapper.selectMenuTreeByUserId(userId);
+        List<SysMenu> menus = menuMapper.selectMenuTreeAll();
+        if (!SecurityUtils.isAdmin(userId)) {
+            List<SysMenu> userMenus = menuMapper.selectMenuTreeByUserId(userId);
+            menus = this.addParentMenu(userMenus, menus);
         }
         return getChildPerms(menus, 0);
-//        return menus;
+    }
+
+    public List<SysMenu> addParentMenu(List<SysMenu> menus, List<SysMenu> allMenus) {
+        Map<Long, SysMenu> sysMenuMap = allMenus.stream()
+                .distinct()
+                .collect(Collectors.toMap(SysMenu::getMenuId, sysMenu -> sysMenu));
+        Map<Long, SysMenu> resultMenuMap = menus.stream()
+                .distinct()
+                .collect(Collectors.toMap(SysMenu::getMenuId, sysMenu -> sysMenu));
+        for (SysMenu menu : menus) {
+            if (menu.getParentId() == 0) {
+                continue;
+            }
+            resultMenuMap.put(menu.getParentId(), sysMenuMap.get(menu.getParentId()));
+            SysMenu sysMenu = sysMenuMap.get(menu.getParentId());
+            if (sysMenu.getParentId() != 0) {
+                resultMenuMap.put(sysMenu.getParentId(), sysMenuMap.get(sysMenu.getParentId()));
+            }
+        }
+        return new ArrayList<>(resultMenuMap.values());
     }
 
 
