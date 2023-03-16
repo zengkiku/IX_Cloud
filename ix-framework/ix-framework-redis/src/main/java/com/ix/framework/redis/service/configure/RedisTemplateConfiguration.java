@@ -8,12 +8,12 @@ import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.handler.timeout.IdleStateHandler;
-import lombok.Data;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +25,6 @@ import org.springframework.data.redis.connection.lettuce.LettucePoolingClientCon
 import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
-import java.time.Duration;
-
 
 
 /**
@@ -34,118 +32,116 @@ import java.time.Duration;
  * @email zeng_kiku@qq.com
  * @Description: Redis 配置类
  */
-@Data
 @EnableCaching
 @AutoConfiguration
 @AutoConfigureBefore(RedisAutoConfiguration.class)
-@ConfigurationProperties(prefix = "spring.redis")
 public class RedisTemplateConfiguration {
 
-	private String host;
+    @Bean
+    @Primary
+    @ConfigurationProperties(prefix = "spring.redis")
+    public RedisProperties redisProperties() {
+        return new RedisProperties();
+    }
 
-	private Integer port;
+    @Bean
+    @Primary
+    @ConfigurationProperties(prefix = "spring.redis.lettuce.pool")
+    public GenericObjectPoolConfig<LettucePoolingClientConfiguration> genericObjectPoolConfig() {
+        return new GenericObjectPoolConfig<>();
+    }
 
-	private Integer database;
+    @Bean
+    @Primary
+    @ConditionalOnClass(RedisOperations.class)
+    public RedisTemplate<String, Object> redisTemplate(LettuceConnectionFactory factory) {
 
-	private Duration timeout;
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
 
+        redisTemplate.setConnectionFactory(factory);
 
-	@Bean
-	@Primary
-	@ConfigurationProperties(prefix = "spring.redis.lettuce.pool")
-	public GenericObjectPoolConfig<LettucePoolingClientConfiguration> genericObjectPoolConfig() {
-		return new GenericObjectPoolConfig<>();
-	}
+        redisTemplate.setKeySerializer(RedisSerializer.string());
+        redisTemplate.setHashKeySerializer(RedisSerializer.string());
+        redisTemplate.setValueSerializer(RedisSerializer.string());
+        redisTemplate.setHashValueSerializer(RedisSerializer.string());
+        return redisTemplate;
+    }
 
-	@Bean
-	@Primary
-	@ConditionalOnClass(RedisOperations.class)
-	public RedisTemplate<String, Object> redisTemplate(LettuceConnectionFactory factory) {
+    /**
+     * 加入心跳检测防止连接超时
+     *
+     * @return
+     */
+    @Bean
+    @Primary
+    public ClientResources clientResources() {
+        NettyCustomizer nettyCustomizer = new NettyCustomizer() {
+            @Override
+            public void afterChannelInitialized(Channel channel) {
+                channel.pipeline().addLast(
+                        new IdleStateHandler(0, 0, 60));
+                channel.pipeline().addLast(new ChannelDuplexHandler() {
+                    @Override
+                    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) {
+                        if (evt instanceof IdleStateEvent) {
+                            ctx.disconnect();
+                        }
+                    }
+                });
+            }
 
-		RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+            @Override
+            public void afterBootstrapInitialized(Bootstrap bootstrap) {
+            }
+        };
 
-		redisTemplate.setConnectionFactory(factory);
+        return ClientResources.builder().nettyCustomizer(nettyCustomizer).build();
+    }
 
-		redisTemplate.setKeySerializer(RedisSerializer.string());
-		redisTemplate.setHashKeySerializer(RedisSerializer.string());
-		redisTemplate.setValueSerializer(RedisSerializer.string());
-		redisTemplate.setHashValueSerializer(RedisSerializer.string());
-		return redisTemplate;
-	}
+    @Bean
+    @Primary
+    public LettuceConnectionFactory lettuceConnectionFactory(ClientResources clientResources, RedisProperties redisProperties,
+                                                             GenericObjectPoolConfig<LettucePoolingClientConfiguration> genericObjectPoolConfig) {
+        LettuceClientConfiguration clientConfig = LettucePoolingClientConfiguration.builder()
+                .clientResources(clientResources)
+                .commandTimeout(redisProperties.getTimeout())
+                .poolConfig(genericObjectPoolConfig)
+                .build();
 
-	/**
-	 * 加入心跳检测防止连接超时
-	 * @return
-	 */
-	@Bean
-	public ClientResources clientResources(){
-		NettyCustomizer nettyCustomizer = new NettyCustomizer() {
-			@Override
-			public void afterChannelInitialized(Channel channel) {
-				channel.pipeline().addLast(
-						new IdleStateHandler(0, 0, 60));
-				channel.pipeline().addLast(new ChannelDuplexHandler() {
-					@Override
-					public void userEventTriggered(ChannelHandlerContext ctx, Object evt) {
-						if (evt instanceof IdleStateEvent) {
-							ctx.disconnect();
-						}
-					}
-				});
-			}
-			@Override
-			public void afterBootstrapInitialized(Bootstrap bootstrap) {
-			}
-		};
+        RedisStandaloneConfiguration redisConfiguration = new RedisStandaloneConfiguration(redisProperties.getHost(), redisProperties.getPort());
+        redisConfiguration.setDatabase(redisProperties.getDatabase());
 
-		return ClientResources.builder().nettyCustomizer(nettyCustomizer ).build();
-	}
+        LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(redisConfiguration, clientConfig);
+        lettuceConnectionFactory.afterPropertiesSet();
+        lettuceConnectionFactory.setValidateConnection(false);
 
-	@Bean
-	@Primary
-	public LettuceConnectionFactory lettuceConnectionFactory(ClientResources clientResources,
-															 GenericObjectPoolConfig<LettucePoolingClientConfiguration> genericObjectPoolConfig) {
-
-		LettuceClientConfiguration clientConfig = LettucePoolingClientConfiguration.builder()
-				.clientResources(clientResources)
-				.commandTimeout(timeout)
-				.poolConfig(genericObjectPoolConfig)
-				.build();
-
-			RedisStandaloneConfiguration redisConfiguration = new RedisStandaloneConfiguration(host, port);
-			redisConfiguration.setDatabase(database);
-
-			LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(redisConfiguration, clientConfig);
-			lettuceConnectionFactory.afterPropertiesSet();
-			lettuceConnectionFactory.setValidateConnection(false);
-
-			return lettuceConnectionFactory;
-	}
+        return lettuceConnectionFactory;
+    }
 
 
-	@Bean
-	public HashOperations<String, String, Object> hashOperations(RedisTemplate<String, Object> redisTemplate) {
-		return redisTemplate.opsForHash();
-	}
+    @Bean
+    public HashOperations<String, String, Object> hashOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForHash();
+    }
 
-	@Bean
-	public ValueOperations<String, String> valueOperations(RedisTemplate<String, String> redisTemplate) {
-		return redisTemplate.opsForValue();
-	}
+    @Bean
+    public ValueOperations<String, String> valueOperations(RedisTemplate<String, String> redisTemplate) {
+        return redisTemplate.opsForValue();
+    }
 
-	@Bean
-	public ListOperations<String, Object> listOperations(RedisTemplate<String, Object> redisTemplate) {
-		return redisTemplate.opsForList();
-	}
+    @Bean
+    public ListOperations<String, Object> listOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForList();
+    }
 
-	@Bean
-	public SetOperations<String, Object> setOperations(RedisTemplate<String, Object> redisTemplate) {
-		return redisTemplate.opsForSet();
-	}
+    @Bean
+    public SetOperations<String, Object> setOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForSet();
+    }
 
-	@Bean
-	public ZSetOperations<String, Object> zSetOperations(RedisTemplate<String, Object> redisTemplate) {
-		return redisTemplate.opsForZSet();
-	}
+    @Bean
+    public ZSetOperations<String, Object> zSetOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForZSet();
+    }
 
 }

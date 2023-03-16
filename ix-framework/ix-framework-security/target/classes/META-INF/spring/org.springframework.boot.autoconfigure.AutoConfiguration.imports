@@ -1,7 +1,0 @@
-com.ix.framework.security.service.impl.IXUserDetailsServiceImpl
-com.ix.framework.security.service.impl.IXSmsDetailsServiceImpl
-com.ix.framework.security.service.impl.IXRedisOAuth2AuthorizationService
-com.ix.framework.security.service.impl.IXRedisOAuth2AuthorizationConsentService
-com.ix.framework.security.service.impl.IXRemoteRegisteredClientRepository
-com.ix.framework.security.config.IXSecurityMessageSourceConfiguration
-com.ix.framework.security.aspect.IXSecurityInnerAspect
