@@ -16,11 +16,11 @@
 
 后端源码：https://github.com/zengkiku/IX_Cloud
 
-前端源码：https://github.com/ix-s/ix-ui
+[//]: # (前端源码：https://github.com/ix-s/ix-ui)
 
-技术文档：https://www.ix.cn/docs/
+[//]: # (技术文档：https://www.ix.cn/docs/)
 
-官方博客：https://www.ix.cn
+[//]: # (官方博客：https://www.ix.cn)
 
 ## 系统模块
 
