@@ -101,8 +101,8 @@ public class SysMenuController extends IXController {
 	@GetMapping("/list")
 	@PreAuthorize("@role.hasPermi('system:menu:list')")
 	public JsonResult<List<SysMenu>> list(SysMenu sysMenu) {
-		LoginUser loginUser = SecurityUtils.getLoginUser();
-		Long userId = loginUser.getUserId();
+		Long userId = SecurityUtils.getLoginUser().getUserId();
+
 		List<SysMenu> menus = iSysMenuService.selectMenuList(sysMenu, userId);
 		return JsonResult.success(menus);
 	}

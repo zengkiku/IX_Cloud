@@ -197,6 +197,12 @@
                 <version>${ix.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.ix</groupId>
+                <artifactId>ix-framework-feign</artifactId>
+                <version>${ix.version}</version>
+            </dependency>
+
             <!--公共安全配置模块-->
             <dependency>
                 <groupId>com.ix</groupId>
@@ -357,6 +363,8 @@
         <module>ix-nacos</module>
         <module>ix-server</module>
         <module>ix-visual</module>
+        <module>ix-framework/ix-framework-feign</module>
+        <module>ix-framework/ix-framework-mq</module>
     </modules>
 
     <build>

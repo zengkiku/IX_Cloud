@@ -55,14 +55,20 @@ public class SysMenuServiceImpl implements ISysMenuService {
     @ShardingDatasource
     @Override
     public List<SysMenu> selectMenuList(SysMenu menu, Long userId) {
-        List<SysMenu> menuList;
         // 管理员显示所有菜单信息
-        if (SysUser.isAdmin(userId)) {
-            menuList = menuMapper.selectMenuList(menu);
-        } else {
-            menu.getParams().put("userId", userId);
-            menuList = menuMapper.selectMenuListByUserId(menu);
+        List<SysMenu> menuList = menuMapper.selectMenuList(menu);
+//        if (SysUser.isAdmin(userId)) {
+//            menuList = menuMapper.selectMenuList(menu);
+//        } else {
+//            menu.getParams().put("userId", userId);
+//            menuList = menuMapper.selectMenuListByUserId(menu);
+//        }
+
+        if (!SecurityUtils.isAdmin(userId)) {
+            List<SysMenu> userMenus = menuMapper.selectMenuTreeByUserId(userId);
+            menuList = this.addParentMenu(userMenus, menuList);
         }
+
         return menuList;
     }
 
@@ -128,7 +134,11 @@ public class SysMenuServiceImpl implements ISysMenuService {
                 resultMenuMap.put(sysMenu.getParentId(), sysMenuMap.get(sysMenu.getParentId()));
             }
         }
-        return new ArrayList<>(resultMenuMap.values());
+        ArrayList<SysMenu> sysMenus = new ArrayList<>(resultMenuMap.values());
+        return sysMenus.stream()
+                .sorted(Comparator.comparing(SysMenu::getParentId)
+                        .thenComparing(SysMenu::getOrderNum))
+                .collect(Collectors.toList());
     }
 
 

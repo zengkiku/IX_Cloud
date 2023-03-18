@@ -22,6 +22,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -125,6 +126,7 @@ public class SysProfileController extends IXController {
      */
     @Operation(summary = "重置密码")
     @Log(service = "个人信息", businessType = BusinessType.UPDATE)
+    @PreAuthorize("@role.hasPermi('system:user:resetPwd')")
     @PutMapping("/updatePwd")
     public JsonResult<String> updatePwd(@RequestBody UserPassword userPassword) {
 

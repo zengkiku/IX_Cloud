@@ -6,6 +6,7 @@ import com.ix.api.system.feign.RemoteOauth2ClientDetailsService;
 import com.ix.framework.core.constants.SecurityConstants;
 import com.ix.framework.core.domain.utils.ResUtils;
 import com.ix.framework.redis.service.constants.CacheConstants;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
@@ -27,10 +28,11 @@ import java.util.Optional;
  * @email zeng_kiku@qq.com
  * @Description: 实现储存redis个性化
  */
+@RequiredArgsConstructor
 public class IXRemoteRegisteredClientRepository implements RegisteredClientRepository {
 
 	/**
-	 * 刷新令牌有效期默认 30 填
+	 * 刷新令牌有效期默认 30 天
 	 */
 	private final static int refreshTokenValiditySeconds = 60 * 60 * 24 * 30;
 
@@ -39,8 +41,8 @@ public class IXRemoteRegisteredClientRepository implements RegisteredClientRepos
 	 */
 	private final static int accessTokenValiditySeconds = 60 * 60 * 12;
 
-	@Autowired
-	private RemoteOauth2ClientDetailsService remoteOauth2ClientDetailsService;
+
+	private final RemoteOauth2ClientDetailsService remoteOauth2ClientDetailsService;
 
 	/**
 	 * Saves the registered client.

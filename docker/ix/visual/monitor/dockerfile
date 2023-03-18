@@ -6,7 +6,7 @@ VOLUME /zeng/cloud/ix
 # 创建目录
 RUN mkdir -p /zeng/cloud/ix
 # 指定路径
-WORKDIR /home/ix
+WORKDIR /zeng/cloud/ix
 # 复制jar文件到路径
 COPY ./jar/ix-visual-monitor.jar /zeng/cloud/ix/ix-visual-monitor.jar
 # 启动网关服务

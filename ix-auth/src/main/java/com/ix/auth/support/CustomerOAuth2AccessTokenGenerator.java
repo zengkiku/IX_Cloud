@@ -24,7 +24,7 @@ import java.util.UUID;
  * @email zeng_kiku@qq.com
  * @Description:
  */
-public class CustomeOAuth2AccessTokenGenerator implements OAuth2TokenGenerator<OAuth2AccessToken> {
+public class CustomerOAuth2AccessTokenGenerator implements OAuth2TokenGenerator<OAuth2AccessToken> {
 
 	private OAuth2TokenCustomizer<OAuth2TokenClaimsContext> accessTokenCustomizer;
 

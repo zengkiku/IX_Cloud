@@ -138,8 +138,7 @@ public class IXTokenEndpoint {
 					.sendAccessTokenResponse(authorization, claims);
 			this.accessTokenHttpResponseConverter.write(sendAccessTokenResponse, MediaType.APPLICATION_JSON,
 					httpResponse);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			throw new RuntimeException("返回信息错误");
 		}
 

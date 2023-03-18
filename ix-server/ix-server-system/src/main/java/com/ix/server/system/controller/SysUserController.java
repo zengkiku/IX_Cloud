@@ -22,6 +22,7 @@ import com.ix.server.system.service.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -127,6 +128,9 @@ public class SysUserController extends IXController {
 	@Operation(summary = "获取当前用户信息")
 	@GetMapping("getInfo")
 	public AjaxResult getInfo() {
+		if (SecurityUtils.getLoginUser() == null || SecurityUtils.getLoginUser().getUserId() == null) {
+			return null;
+		}
 		Long userId = SecurityUtils.getLoginUser().getUserId();
 		// 角色集合
 		Set<String> roles = iSysPermissionService.getRolePermission(userId);

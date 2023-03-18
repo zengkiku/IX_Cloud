@@ -6,6 +6,8 @@ import com.ix.framework.core.application.page.TableDataInfo;
 import com.ix.framework.core.constants.SecurityConstants;
 import com.ix.framework.core.constants.ServiceNameConstants;
 import com.ix.framework.core.domain.R;
+import com.ix.framework.feign.annotation.IXBackoff;
+import com.ix.framework.feign.annotation.IXFeignRetry;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,6 +28,7 @@ public interface RemoteTokenService {
 	 * @param tokenDTO TokenDTO
 	 * @return R<TableDataInfo>
 	 */
+	@IXFeignRetry(maxAttempt = 5, backoff = @IXBackoff(delay = 2000L))
 	@GetMapping(value = "/api/token/pageQuery", headers = SecurityConstants.HEADER_FROM_IN)
 	R<TableDataInfo> getTokenPage(@SpringQueryMap TokenDTO tokenDTO);
 

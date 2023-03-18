@@ -24,6 +24,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-framework-feign</artifactId>
+        </dependency>
+
         <!--feign 注解依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

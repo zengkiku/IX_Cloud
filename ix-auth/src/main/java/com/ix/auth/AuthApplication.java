@@ -5,6 +5,7 @@ import com.ix.framework.core.annotation.EnableIXConfig;
 import com.ix.framework.swagger.annotation.EnableIXSwagger2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author Zeng IX
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableIXSwagger2
 @EnableIXConfig
 @EnableIXFeignClients
+@EnableDiscoveryClient
 @SpringBootApplication
 public class AuthApplication {
 

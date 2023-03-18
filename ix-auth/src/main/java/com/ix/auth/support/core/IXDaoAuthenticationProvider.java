@@ -106,8 +106,7 @@ public class IXDaoAuthenticationProvider extends AbstractUserDetailsAuthenticati
 		try {
 			request = ServletUtils.getRequest().orElseThrow(
 					(Supplier<Throwable>) () -> new InternalAuthenticationServiceException("web request is empty"));
-		}
-		catch (Throwable e) {
+		} catch (Throwable e) {
 			throw new InternalAuthenticationServiceException("web request is empty");
 		}
 
@@ -127,7 +126,7 @@ public class IXDaoAuthenticationProvider extends AbstractUserDetailsAuthenticati
 				.filter(service -> service.support(finalClientId, grantType))
 				.max(Comparator.comparingInt(Ordered::getOrder));
 
-		if (!optional.isPresent()) {
+		if (optional.isEmpty()) {
 			throw new InternalAuthenticationServiceException("UserDetailsService error , not register");
 		}
 
@@ -138,15 +137,12 @@ public class IXDaoAuthenticationProvider extends AbstractUserDetailsAuthenticati
 						"UserDetailsService returned null, which is an interface contract violation");
 			}
 			return loadedUser;
-		}
-		catch (UsernameNotFoundException ex) {
+		} catch (UsernameNotFoundException ex) {
 			mitigateAgainstTimingAttack(authentication);
 			throw ex;
-		}
-		catch (InternalAuthenticationServiceException ex) {
+		} catch (InternalAuthenticationServiceException ex) {
 			throw ex;
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			throw new InternalAuthenticationServiceException(ex.getMessage(), ex);
 		}
 	}

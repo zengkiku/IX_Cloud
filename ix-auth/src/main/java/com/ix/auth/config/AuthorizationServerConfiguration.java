@@ -1,6 +1,6 @@
 package com.ix.auth.config;
 
-import com.ix.auth.support.CustomeOAuth2AccessTokenGenerator;
+import com.ix.auth.support.CustomerOAuth2AccessTokenGenerator;
 import com.ix.auth.support.core.CustomOAuth2TokenCustomizer;
 import com.ix.auth.support.core.FormIdentityLoginConfigurer;
 import com.ix.auth.support.core.IXDaoAuthenticationProvider;
@@ -12,7 +12,6 @@ import com.ix.auth.support.sms.OAuth2ResourceOwnerSmsAuthenticationConverter;
 import com.ix.auth.support.sms.OAuth2ResourceOwnerSmsAuthenticationProvider;
 import com.ix.framework.core.constants.SecurityConstants;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -82,7 +81,7 @@ public class AuthorizationServerConfiguration {
      */
     @Bean
     public OAuth2TokenGenerator oAuth2TokenGenerator() {
-        CustomeOAuth2AccessTokenGenerator accessTokenGenerator = new CustomeOAuth2AccessTokenGenerator();
+        CustomerOAuth2AccessTokenGenerator accessTokenGenerator = new CustomerOAuth2AccessTokenGenerator();
         // 注入Token 增加关联用户信息
         accessTokenGenerator.setAccessTokenCustomizer(new CustomOAuth2TokenCustomizer());
         return new DelegatingOAuth2TokenGenerator(accessTokenGenerator, new OAuth2RefreshTokenGenerator());

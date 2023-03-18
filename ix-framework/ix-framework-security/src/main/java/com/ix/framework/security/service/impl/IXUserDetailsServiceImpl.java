@@ -9,6 +9,7 @@ import com.ix.framework.redis.service.constants.CacheConstants;
 import com.ix.framework.security.domain.LoginUser;
 import com.ix.framework.security.exception.UserFrozenException;
 import com.ix.framework.security.service.IXUserDetailsService;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import org.springframework.security.oauth2.core.AuthorizationGrantType;
  * @Description: 自定义用户信息处理
  */
 @Primary
+@RequiredArgsConstructor
 public class IXUserDetailsServiceImpl implements IXUserDetailsService {
 
 	private static final Logger log = LoggerFactory.getLogger(IXUserDetailsServiceImpl.class);
@@ -39,11 +41,9 @@ public class IXUserDetailsServiceImpl implements IXUserDetailsService {
 	 */
 	private final static String GRAN_TYPE = "password";
 
-	@Autowired
-	private RemoteUserService remoteUserService;
+	private final RemoteUserService remoteUserService;
 
-	@Autowired
-	private CacheManager cacheManager;
+	private final CacheManager cacheManager;
 
 	/**
 	 * 识别是否使用此登录器
@@ -89,7 +89,7 @@ public class IXUserDetailsServiceImpl implements IXUserDetailsService {
 		}).getSysUser();
 
 		// 获取用户状态信息
-		if (sysUser.getStatus().equals("1")) {
+		if ("1".equals(sysUser.getStatus())) {
 			log.info("{}： 用户已被冻结.", username);
 			throw new UserFrozenException("账号已被冻结");
 		}

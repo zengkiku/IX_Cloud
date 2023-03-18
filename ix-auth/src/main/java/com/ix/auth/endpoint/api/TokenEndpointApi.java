@@ -13,6 +13,7 @@ import com.ix.framework.utils.SpringContextHolder;
 import com.ix.framework.utils.StringUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -28,6 +29,7 @@ import org.springframework.security.web.authentication.preauth.PreAuthenticatedA
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -39,16 +41,14 @@ import java.util.stream.Collectors;
 @Tag(description = "TokenEndpointApi", name = "TokenEndpointApi")
 @RestController
 @RequestMapping("/api/token")
+@RequiredArgsConstructor
 public class TokenEndpointApi {
 
-	@Autowired
-	private RedisTemplate<String, Object> redisTemplate;
+	private final RedisTemplate<String, Object> redisTemplate;
 
-	@Autowired
-	private CacheManager cacheManager;
+	private final CacheManager cacheManager;
 
-	@Autowired
-	private OAuth2AuthorizationService authorizationService;
+	private final OAuth2AuthorizationService authorizationService;
 
 	/**
 	 * 删除token
@@ -94,12 +94,13 @@ public class TokenEndpointApi {
 			key = String.format("%s::*%s*", CacheConstants.PROJECT_OAUTH_ACCESS, username);
 		}
 		Set<String> keys = redisTemplate.keys(key);
+		assert keys != null;
 		List<String> pages = keys.stream().skip((long) (current - 1) * pageSize).limit(pageSize)
 				.collect(Collectors.toList());
 
 		TableDataInfo tableDataInfo = new TableDataInfo();
 
-		List<TokenVo> tokenVoList = redisTemplate.opsForValue().multiGet(pages).stream().map(obj -> {
+		List<TokenVo> tokenVoList = Objects.requireNonNull(redisTemplate.opsForValue().multiGet(pages)).stream().map(obj -> {
 			OAuth2Authorization authorization = (OAuth2Authorization) obj;
 			TokenVo tokenVo = new TokenVo();
 			tokenVo.setClientId(authorization.getRegisteredClientId());
@@ -112,6 +113,7 @@ public class TokenEndpointApi {
 			tokenVo.setAccessToken(accessToken.getToken().getTokenValue());
 
 			OAuth2Authorization.Token<OAuth2RefreshToken> refreshToken = authorization.getRefreshToken();
+			assert refreshToken != null;
 			tokenVo.setRefreshToken(refreshToken.getToken().getTokenValue());
 
 			String expiresAt = TemporalAccessorUtil.format(accessToken.getToken().getExpiresAt(),

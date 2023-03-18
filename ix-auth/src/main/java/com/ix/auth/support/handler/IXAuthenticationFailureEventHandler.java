@@ -66,8 +66,7 @@ public class IXAuthenticationFailureEventHandler implements AuthenticationFailur
 		// 写出错误信息
 		try {
 			sendErrorResponse(request, response, exception);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			log.error("返回错误信息失败", e);
 		}
 	}

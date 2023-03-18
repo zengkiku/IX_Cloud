@@ -1,8 +1,8 @@
 # IX ∞ Cloud
 
-[![AUR](https://img.shields.io/github/license/ix-s/ix)](https://github.com/ix-s/ix/blob/master/LICENSE)
-[![](https://img.shields.io/badge/Author-zeng_kiku-orange.svg)](https://www.ix.cn)
-[![](https://img.shields.io/badge/version-3.0.0-success)](https://gitee.com/ix/ix)
+[![AUR](https://img.shields.io/github/license/ix-s/ix)](https://github.com/zengkiku/IX_Cloud)
+[![](https://img.shields.io/badge/Author-zeng_kiku-orange.svg)](https://github.com/zengkiku)
+[![](https://img.shields.io/badge/version-3.0.0-success)](https://github.com/zengkiku/IX_Cloud)
 
 
 一款基于 Spring Cloud Alibaba 的权限管理系统，集成市面上流行库，可以作用为快速开发的一个框架使用。

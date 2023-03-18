@@ -77,8 +77,7 @@ public class IXAuthenticationSuccessEventHandler implements AuthenticationSucces
 		// 输出token
 		try {
 			sendAccessTokenResponse(request, response, authentication);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			log.error("返回消息失败", e);
 		}
 	}

@@ -7,11 +7,11 @@ services:
 #    environment:
 #      - TZ=Asia/Shanghai
 #    build:
-#      context: ./nginx
+#      context: /zeng/twt/docker/nginx
 #    ports:
-#      - "80:80"
+#      - "88:88"
 #    volumes:
-#      - ./nginx/html:/home/ix/ix-ui
+##      - ./nginx/html:/zeng/cloud/ix/ix-ui
 #      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
 #      - ./nginx/logs:/var/log/nginx
 #      - ./nginx/conf.d:/etc/nginx/conf.d
@@ -19,21 +19,22 @@ services:
 #      - ix-gateway
 #    links:
 #      - ix-gateway
-  ix-nacos:
-    container_name: ix-nacos
-    image: ix-nacos
+
+#  ix-nacos:
+#    container_name: ix-nacos
+#    image: ix-nacos
 
   ix-gateway:
     container_name: ix-gateway
     image: ix-gateway
     restart: always
-    depends_on:
-      - ix-nacos
+#    depends_on:
+#      - ix-nacos
     environment:
       - MODE=standalone
       - TZ=Asia/Shanghai
     build:
-      context: ./ix/gateway
+      context: ./gateway
       dockerfile: dockerfile
     ports:
       - "8080:8080"
@@ -42,63 +43,78 @@ services:
     container_name: ix-auth
     image: ix-auth
     restart: always
-    depends_on:
-      - ix-nacos
+#    depends_on:
+#      - ix-nacos
     environment:
       - MODE=standalone
       - TZ=Asia/Shanghai
     build:
-      context: ./ix/auth
+      context: ./auth
       dockerfile: dockerfile
 
   ix-server-system:
     container_name: ix-server-system
     image: ix-server-system
     restart: always
-    depends_on:
-      - ix-nacos
+#    depends_on:
+#      - ix-nacos
     environment:
       - MODE=standalone
       - TZ=Asia/Shanghai
     build:
-      context: ./ix/server/system
+      context: ./server/system
       dockerfile: dockerfile
 
-#  ix-server-job:
-#    container_name: ix-server-job
-#    image: ix-server-job
-#    restart: always
+  ix-server-job:
+    container_name: ix-server-job
+    image: ix-server-job
+    restart: always
 #    depends_on:
 #      - ix-nacos
-#    environment:
-#      - MODE=standalone
-#      - TZ=Asia/Shanghai
-#    build:
-#      context: ./ix/server/job
-#      dockerfile: dockerfile
-#
-#  ix-server-dfs:
-#    container_name: ix-server-dfs
-#    image: ix-server-dfs
-#    restart: always
+    environment:
+      - MODE=standalone
+      - TZ=Asia/Shanghai
+    build:
+      context: ./server/job
+      dockerfile: dockerfile
+
+  ix-server-dfs:
+    container_name: ix-server-dfs
+    image: ix-server-dfs
+    restart: always
 #    depends_on:
 #      - ix-nacos
-#    environment:
-#      - MODE=standalone
-#      - TZ=Asia/Shanghai
-#    build:
-#      context: ./ix/server/dfs
-#      dockerfile: dockerfile
-#
-#  ix-visual-monitor:
-#    container_name: ix-visual-monitor
-#    image: ix-visual-monitor
-#    restart: always
+    environment:
+      - MODE=standalone
+      - TZ=Asia/Shanghai
+    build:
+      context: ./server/dfs
+      dockerfile: dockerfile
+
+  ix-visual-monitor:
+    container_name: ix-visual-monitor
+    image: ix-visual-monitor
+    restart: always
 #    depends_on:
 #      - ix-nacos
-#    environment:
-#      - MODE=standalone
-#      - TZ=Asia/Shanghai
-#    build:
-#      context: ./ix/visual/monitor
-#      dockerfile: dockerfile
+    environment:
+      - MODE=standalone
+      - TZ=Asia/Shanghai
+    build:
+      context: ./visual/monitor
+      dockerfile: dockerfile
+
+  ix-server-gen:
+    container_name: ix-server-gen
+    image: ix-server-gen
+    restart: always
+    #    depends_on:
+    #      - ix-nacos
+    environment:
+      - MODE=standalone
+      - TZ=Asia/Shanghai
+    build:
+      context: ./server/gen
+      dockerfile: dockerfile
+
+

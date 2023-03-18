@@ -5,6 +5,8 @@ import com.ix.api.dfs.feign.factory.RemoteFileFallbackFactory;
 import com.ix.framework.core.constants.SecurityConstants;
 import com.ix.framework.core.constants.ServiceNameConstants;
 import com.ix.framework.core.domain.R;
+import com.ix.framework.feign.annotation.IXBackoff;
+import com.ix.framework.feign.annotation.IXFeignRetry;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
