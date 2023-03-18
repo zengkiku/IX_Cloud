@@ -26,16 +26,18 @@
 
 ```
 com.ix
-├── ix-ui              // 前端框架 [80]
-├── ix-gateway         // 网关模块 [88]
+├── ix-ui              // 前端框架 [80]【主要】
+├── ix-gateway         // 网关模块 [88]【主要】
 ├── ix-nacos           // nacos [8848]
-├── ix-auth            // 认证中心 [8888]
+├── ix-auth            // 认证中心 [8888]【主要】
 ├── ix-api             // 接口模块
 │       └── ix-api-system                             // 系统接口
 │       └── ix-api-dfs                                // DFS接口
 │       └── ix-api-job                                // 定时任务接口
 ├── ix-framework       // 核心模块
 │       └── ix-framework-core                         // 核心模块
+│       └── ix-framework-feign                        // 扩展feign模块
+│       └── ix-framework-mq                           // 消息队列模块
 │       └── ix-framework-log                          // 日志记录
 │       └── ix-framework-datascope                    // 数据权限
 │       └── ix-framework-jdbc                         // jdbc
@@ -44,7 +46,7 @@ com.ix
 │       └── ix-framework-security                     // 安全模块
 │       └── ix-framework-utils                        // 工具模块
 ├── ix-server         // 业务模块
-│       └── ix-server-system                          // 系统模块 [8081]
+│       └── ix-server-system                          // 系统模块 [8081]【主要】
 │       └── ix-server-job                             // 定时任务 [8082]
 │       └── ix-server-dfs                             //  DFS服务 [8083]
 │       └── ix-server-gen                             // 代码生成 [8084]
