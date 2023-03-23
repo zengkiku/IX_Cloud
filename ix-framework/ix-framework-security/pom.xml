@@ -46,6 +46,11 @@
             <artifactId>ix-framework-redis</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.ix</groupId>
+            <artifactId>ix-api-auth</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

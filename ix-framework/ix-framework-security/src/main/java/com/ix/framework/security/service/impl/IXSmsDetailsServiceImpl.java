@@ -10,6 +10,7 @@ import com.ix.framework.redis.service.constants.CacheConstants;
 import com.ix.framework.security.domain.LoginUser;
 import com.ix.framework.security.exception.UserFrozenException;
 import com.ix.framework.security.service.IXUserDetailsService;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  * @email zeng_kiku@qq.com
  * @Description: 自定义手机登录处理
  */
+@RequiredArgsConstructor
 public class IXSmsDetailsServiceImpl implements IXUserDetailsService {
 
 	private static final Logger log = LoggerFactory.getLogger(IXSmsDetailsServiceImpl.class);
@@ -32,11 +34,11 @@ public class IXSmsDetailsServiceImpl implements IXUserDetailsService {
 	 */
 	private final static String PLAT_FORM = "admin";
 
-	@Autowired
-	private RemoteUserService remoteUserService;
 
-	@Autowired
-	private CacheManager cacheManager;
+	private final RemoteUserService remoteUserService;
+
+
+	private final CacheManager cacheManager;
 
 	/**
 	 * 识别是否使用此登录器

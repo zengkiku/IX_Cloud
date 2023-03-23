@@ -60,6 +60,7 @@ public class IXDaoAuthenticationProvider extends AbstractUserDetailsAuthenticati
 	public IXDaoAuthenticationProvider() {
 		setMessageSource(SpringUtil.getBean("securityMessageSource"));
 		setPasswordEncoder(PasswordEncoderFactories.createDelegatingPasswordEncoder());
+//		setHideUserNotFoundExceptions(false); // 抛出自定义的登陆错误
 	}
 
 	/**
@@ -94,6 +95,7 @@ public class IXDaoAuthenticationProvider extends AbstractUserDetailsAuthenticati
 		String presentedPassword = authentication.getCredentials().toString();
 		if (!this.passwordEncoder.matches(presentedPassword, userDetails.getPassword())) {
 			this.logger.debug("Failed to authenticate since password does not match stored value");
+//			throw new BadCredentialsException("密码错误");
 			throw new BadCredentialsException(this.messages
 					.getMessage("AbstractUserDetailsAuthenticationProvider.badCredentials", "Bad credentials"));
 		}

@@ -64,6 +64,9 @@ public class SysUserServiceImpl implements ISysUserService {
 	@Override
 	public SysUser selectUserByUserName(String userName, boolean hidden) {
 		SysUser sysUser = sysUserMapper.selectUserByUserName(userName);
+		if (sysUser == null) {
+			return null;
+		}
 		SysDept sysDept = sysDeptMapper.selectDeptById(sysUser.getDeptId());
 		sysUser.setDept(sysDept);
 		if (hidden) {
@@ -73,7 +76,6 @@ public class SysUserServiceImpl implements ISysUserService {
 			// 隐藏密码
 			sysUser.setPassword(null);
 		}
-
 
 		return sysUser;
 	}
