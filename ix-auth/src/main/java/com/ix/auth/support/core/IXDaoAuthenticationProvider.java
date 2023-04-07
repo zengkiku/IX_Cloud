@@ -104,7 +104,7 @@ public class IXDaoAuthenticationProvider extends AbstractUserDetailsAuthenticati
 	@Override
 	protected final UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication) {
 		prepareTimingAttackProtection();
-		HttpServletRequest request = null;
+		HttpServletRequest request;
 		try {
 			request = ServletUtils.getRequest().orElseThrow(
 					(Supplier<Throwable>) () -> new InternalAuthenticationServiceException("web request is empty"));

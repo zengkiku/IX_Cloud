@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -47,7 +48,10 @@ public class SysUserApi extends IXController {
 	public R<UserInfo> info(@PathVariable("username") String username) {
 		SysUser sysUser = iSysUserService.selectUserByUserName(username, false);
 		if (TUtils.isEmpty(sysUser)) {
-			return R.fail("登录用户：" + username + " 不存在");
+			return R.fail("登录用户：" + username + " 不存在!");
+		}
+		if (Objects.equals(sysUser.getStatus(), "1")) {
+			return R.fail("登录用户：" + username + " 被冻结!");
 		}
 		// 角色集合
 		Set<String> roles = iSysPermissionService.getRolePermission(sysUser.getUserId());

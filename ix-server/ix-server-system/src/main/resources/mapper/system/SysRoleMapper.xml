@@ -66,7 +66,7 @@
         from sys_role r
 	        left join sys_user_role ur on ur.role_id = r.role_id
 	        left join sys_user u on u.user_id = ur.user_id
-	    where u.user_id = #{userId}
+	    where u.user_id = #{userId} and r.status = 0
 	</select>
 
     <select id="selectRoleById" parameterType="Long" resultMap="SysRoleResult">
