@@ -16,7 +16,6 @@
         <module name="ix-framework-redis" />
         <module name="ix-framework-security" />
         <module name="ix-framework-core" />
-        <module name="ix-nacos" />
         <module name="ix-auth" />
         <module name="ix-server-job" />
         <module name="ix-framework-mq" />
@@ -34,5 +33,8 @@
         <module name="ix-framework-log" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ix-nacos" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

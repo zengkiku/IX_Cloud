@@ -360,7 +360,7 @@
         <module>ix-auth</module>
         <module>ix-framework</module>
         <module>ix-gateway</module>
-        <module>ix-nacos</module>
+<!--        <module>ix-nacos</module>-->
         <module>ix-server</module>
         <module>ix-visual</module>
         <module>ix-framework/ix-framework-feign</module>
@@ -432,13 +432,21 @@
     </build>
 
     <distributionManagement>
+<!--        <repository>-->
+<!--            <id>maven-release</id>-->
+<!--            <url>http://124.222.24.133:8081/repository/maven-release/</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>maven-snapshot</id>-->
+<!--            <url>http://124.222.24.133:8081/repository/maven-snapshot/</url>-->
+<!--        </snapshotRepository>-->
         <repository>
-            <id>maven-release</id>
-            <url>http://124.222.24.133:8081/repository/maven-release/</url>
+            <id>2391769-release-Udsugm</id>
+            <url>https://packages.aliyun.com/maven/repository/2391769-release-Udsugm/</url>
         </repository>
         <snapshotRepository>
-            <id>maven-snapshot</id>
-            <url>http://124.222.24.133:8081/repository/maven-snapshot/</url>
+            <id>2391769-snapshot-sMndQr</id>
+            <url>https://packages.aliyun.com/maven/repository/2391769-snapshot-sMndQr/</url>
         </snapshotRepository>
     </distributionManagement>
 

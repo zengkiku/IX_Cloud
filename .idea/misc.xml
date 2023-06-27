@@ -11,6 +11,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/ix-framework-core/pom.xml" />
+        <option value="$PROJECT_DIR$/ix-nacos/pom.xml" />
       </set>
     </option>
   </component>
